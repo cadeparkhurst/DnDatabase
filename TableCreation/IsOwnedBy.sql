@@ -7,3 +7,6 @@ CharacterID INT,
 Quantity INT,
 PRIMARY KEY(ItemID, CharacterID)
 )
+
+ALTER TABLE IsOwnedBy
+ADD FOREIGN KEY(CharacterID) References [Character](CharacterID);
