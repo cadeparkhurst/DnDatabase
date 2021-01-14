@@ -1,6 +1,6 @@
 CREATE TABLE OffersSkillProficiency (
 ClassID INT,
-SkillName NVARCHAR(20),
+SkillName dbo.skillName,
 PRIMARY KEY(ClassID, SkillName)
 )
 

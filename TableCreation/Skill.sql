@@ -1,3 +1,3 @@
 CREATE TABLE Skill (
-Name NVARCHAR(20) PRIMARY KEY
+Name dbo.skillName PRIMARY KEY
 )

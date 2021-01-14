@@ -1,6 +1,6 @@
 CREATE TABLE ChoseProficiency (
 CharacterID INT,
-SkillName NVARCHAR(20),
+SkillName dbo.skillName,
 PRIMARY KEY(CharacterID, SkillName)
 )
 
