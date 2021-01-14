@@ -1,0 +1,3 @@
+CREATE TABLE SavingThrow (
+Name NVARCHAR(20) PRIMARY KEY
+)
