@@ -3,3 +3,8 @@ ClassID INT,
 SpellID INT,
 PRIMARY KEY(ClassID, SpellID)
 )
+
+ALTER TABLE CanLearnSpell
+ADD FOREIGN KEY(ClassID) REFERENCES Class(ClassID);
+ALTER TABLE CanLearnSpell
+ADD FOREIGN KEY(SpellID) REFERENCES Spell(SpellID);

@@ -3,3 +3,8 @@ ClassID INT,
 WeaponID INT,
 PRIMARY KEY(ClassID, WeaponID)
 )
+
+ALTER TABLE HasWeaponProf
+ADD FOREIGN KEY(ClassID) REFERENCES Class(ClassID)
+ALTER TABLE HasWeaponProf
+ADD FOREIGN KEY(WeaponID) REFERENCES Weapon(ItemID)

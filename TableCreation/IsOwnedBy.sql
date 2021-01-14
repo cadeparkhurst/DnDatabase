@@ -10,3 +10,5 @@ PRIMARY KEY(ItemID, CharacterID)
 
 ALTER TABLE IsOwnedBy
 ADD FOREIGN KEY(CharacterID) References [Character](CharacterID);
+ALTER TABLE IsOwnedBy
+ADD FOREIGN KEY(ItemID) References Item(ItemID);
