@@ -13,3 +13,9 @@ CREATE TABLE Character(
 	HP smallint,
 	MaxHP smallint
 )
+
+ALTER TABLE Character
+ADD Background backgroundName REFERENCES Background(Name)
+
+ALTER TABLE Character
+ADD Race raceName REFERENCES Race(Name)
