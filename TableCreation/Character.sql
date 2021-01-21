@@ -8,6 +8,7 @@ CREATE TABLE Character(
 	[Int] smallint,
 	Wis smallint,
 	Cha smallint,
+	Con smallint,
 	Alignment varchar(25),
 	HP smallint,
 	MaxHP smallint
