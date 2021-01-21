@@ -1,7 +1,7 @@
 USE DnD_goodriat_oriansaj_parkhuca30
 GO
 
-CREATE Procedure AddCharacter
+ALTER Procedure AddCharacter
 	@str smallint,
 	@dex smallint,
 	@intel smallint,
@@ -11,7 +11,9 @@ CREATE Procedure AddCharacter
 	@alignment varchar(25),
 	@hp smallint,
 	@maxhp smallint,
-	@classId int
+	@classId int,
+	@backgroundName dbo.backgroundName,
+	@raceName dbo.raceName
 AS
 BEGIN
 	IF(@str IS NOT NULL AND (@str < 3 OR @str > 20))
@@ -49,9 +51,19 @@ BEGIN
 		RAISERROR('Class must exist in the Class table.', 14, 7);
 		RETURN 7;
 	END
+	IF(NOT EXISTS (SELECT * FROM Background WHERE [Name] = @backgroundName))
+	BEGIN
+		RAISERROR('Background must exist in the Background table.', 14, 8);
+		RETURN 8;
+	END
+	IF(NOT EXISTS (SELECT * FROM Race WHERE [Name] = @raceName))
+	BEGIN
+		RAISERROR('Race must exist in the Race table.', 14, 9);
+		RETURN 9;
+	END
 
-	INSERT INTO Character([Str], Dex, [Int], Wis, Cha, Alignment, HP, MaxHP)
-	VALUES(@str, @dex, @intel, @wis, @cha, @alignment, @hp, @maxhp);
+	INSERT INTO Character([Str], Dex, [Int], Wis, Cha, Alignment, HP, MaxHP, Background, Race)
+	VALUES(@str, @dex, @intel, @wis, @cha, @alignment, @hp, @maxhp, @backgroundName, @raceName);
 
 	DECLARE @newid int;
 	SET @newid = SCOPE_IDENTITY();
@@ -63,4 +75,9 @@ BEGIN
 	SELECT sw.ItemID, @newid, sw.Quantity
 	FROM StartsWith sw
 	WHERE sw.ClassID = @classId
+
+	INSERT INTO Knows_Language(CharacterID, LanguageName)
+	SELECT @newid, klr.LanguageName
+	FROM Knows_Language_From_Race klr
+	WHERE klr.RaceName = @raceName
 END
