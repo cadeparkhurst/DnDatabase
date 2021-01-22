@@ -8,3 +8,6 @@ M varchar(20),
 Duration int,
 Concentration boolean
 );
+ 
+ALTER TABLE Spell
+ADD [Name] varchar(50)
