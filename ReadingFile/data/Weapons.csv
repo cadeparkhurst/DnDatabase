@@ -1,0 +1,38 @@
+ItemID,Damage,Properties,WeaponTypeName
+113,1d4 bludgeoning,Light,SimpleMelee
+114,1d4 piercing,"Finesse, light, thrown (range 20/60)",SimpleMelee
+115,1d8 bludgeoning,Two-handed,SimpleMelee
+116,1d6 slashing,"Light, thrown (range 20/60)",SimpleMelee
+117,1d6 piercing,Thrown (range 30/120),SimpleMelee
+118,1d4 bludgeoning,"Light, thrown (range 20/60)",SimpleMelee
+119,1d6 bludgeoning,,SimpleMelee
+120,1d6 bludgeoning,Versatile (1d8),SimpleMelee
+121,1d4 slashing,Light,SimpleMelee
+122,1d6 piercing,"Thrown (range 20/60), versatile (1d8)",SimpleMelee
+123,1d8 piercing,"Ammunition (range 80/320), loading, two-handed",SimpleRanged
+124,1d4 piercing,"Finesse, thrown (range 20/60)",SimpleRanged
+125,1d6 piercing,"Ammunition (range 80/320), two-handed",SimpleRanged
+126,1d4 bludgeoning,Ammunition (range 30/120),SimpleRanged
+127,1d8 slashing,Versatile (1d10),MartialMelee
+128,1d8 bludgeoning,,MartialMelee
+129,1d10 slashing,"Heavy, reach, two-handed",MartialMelee
+130,1d12 slashing,"Heavy, two-handed",MartialMelee
+131,2d6 slashing,"Heavy, two-handed",MartialMelee
+132,1d10 slashing,"Heavy, reach, two-handed",MartialMelee
+133,1d12 piercing,"Reach, special",MartialMelee
+134,1d8 slashing,Versatile (1d10),MartialMelee
+135,2d6 bludgeoning,"Heavy, two-handed",MartialMelee
+136,1d8 piercing,,MartialMelee
+137,1d10 piercing,"Heavy, reach, two-handed",MartialMelee
+138,1d8 piercing,Finesse,MartialMelee
+139,1d6 slashing,"Finesse, light",MartialMelee
+140,1d6 piercing,"Finesse, light",MartialMelee
+141,1d6 piercing,"Thrown (range 20/60), versatile (1d8)",MartialMelee
+142,1d8 piercing,,MartialMelee
+143,1d8 bludgeoning,Versatile (1d10),MartialMelee
+144,1d4 slashing,"Finesse, reach",MartialMelee
+145,1 piercing,"Ammunition (range 25/100), loading",MartialRanged
+146,1d6 piercing,"Ammunition (range 30/120), light, loading",MartialRanged
+147,1d10 piercing,"Ammunition (range 100/400), heavy, loading, two-handed",MartialRanged
+148,1d8 piercing,"Ammunition (range 150/600), heavy, two-handed",MartialRanged
+149,,"Special, thrown (range 5/15)",MartialRanged

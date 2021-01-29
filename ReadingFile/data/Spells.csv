@@ -1,0 +1,360 @@
+SpellId,Name,CastingTime,Range,V,S,M,Duration,Concentration,Level,School
+1,Acid Splash,1 Action,60ft,1,1,,Instantaneous,0,0,Conjuration
+2,Aid,1 Action,30ft,1,1,Strip of White Cloth,8 hours,0,2,Abjuration
+3,Alarm,1 minute,30ft,1,1,A tiny bell and a piece of fine silver wire,8 hours,0,1,abjuration
+4,Alter Self,1 Action,Self,1,1,,up to 1 hour,1,2,transmutation
+5,Animal Friendship,1 Action,30 ft,1,1,Morsel of Food,24 hours,0,1,enchantment
+6,Animal Messenger,1 Action,30 ft,1,1,Morsel of Food,24 hours,0,2,enchantment
+7,Animal Shapes,1 Action,30 ft,1,1,,up to 24 hours,1,8,transmutation
+8,Animate Dead,1 minute,10 ft,1,1,"drop of blood, flesh,  bone dust",Instantaneous,0,3,necromancy
+9,Animate Objects,1 Action,120 ft,1,1,,up to 1 minute,1,5,transmutation
+10,Antilife Shell,1 Action,Self,1,1,,up to 1 hour,1,5,abjuration
+11,Antimagic Field,1 Action,Self,1,1,pinch of bowdered iron,up to 1 hour,1,8,abjuration
+12,Antipathy/Sympathy,1 hour,60 ft,1,1,alum soaked in vinegar or drop of honey,10 days,0,8,enchantment
+13,Arcane Eye,1 Action,30 ft,1,1,bit of bat fur,up to 1 hour,1,4,divination
+14,Arcane Gate,1 Action,500 ft,1,1,,up to 10 minutes,1,6,conjuration
+15,Arcane Lock,1 Action,Touch,1,1,Gold dust worth >= 25gp which gets consumed,until dispelled,0,2,abjuration
+16,Armor of Agathys,1 Action,Self,1,1,cup of water,1 hour,0,1,abjuration
+17,Arms of Hadar,1 Action,Self,1,1,,Instantaneous,0,1,conjuration
+18,Astral Projection,1 hour,10 ft,1,1,"on jacinth worth at least 1000gp per creature, silver bar worth > 100gp",Special,0,9,necromancy
+19,Augury,1 minute,Self,1,1,"special sticks, bones, or similar tokens worth at least 25gp",Instantaneous,0,2,divination
+20,Aura of Life,1 Action,Self,1,0,,up to 10 minutes,1,4,abjuration
+21,Aura of Purity,1 Action,Self,1,0,,up to 10 minutes,1,4,abjuration
+22,Aura of Vitality,1 Action,Self,1,0,,up to 1 m inute,1,3,evocation
+23,Awaken,8 hours,Touch,1,1,"agate worth >=1000gp, consumed",Instantaneous,0,5,transmutation
+24,Bane,1 Action,30 ft,1,1,"drop of blood, flesh,  bone dust",up to 1 minute,1,1,enchantment
+25,Banishing Smite,1 Bonus Action,Self,1,0,,up to 1 minute,1,5,abjuration
+26,Banishment,1 Action,60 ft,1,1,an item distasteful to the target,up to 1 minute,1,4,abjuration
+27,Barkskin,1 Action,Touch,1,1,oak bark,up to 1 hour,1,2,transmutation
+28,Beacon of Hope,1 Action,30 ft,1,1,,up to 1 minute,1,3,abjuration
+29,Beast Sense,1 Action,Touch,0,1,,up to 1 hour,1,2,divination
+30,Bestow Curse,1 Action,Touch,1,1,,up to 1 minute,1,3,necromancy
+31,Bigby's Hand,1 Action,120 ft,1,1,"eggshell, snakeskin glove",up to 1 minute,1,5,evocation
+32,Blade Barrier,1 Action,90 ft,1,1,,up to 10 minutes,1,6,evocation
+33,Blade Ward,1 Action,Self,1,1,,1  round,0,0,Abjuration
+34,Bless,1 Action,30 ft,1,1,sprinkling of holy water,up to 1 minute,1,1,enchantment
+35,Blight,1 Action,30 ft,1,1,,Instantaneous,0,4,necromancy
+36,Blinding Smite,1 bonus action,self,1,0,,up to 1 minute,0,3,evocation
+37,Blindness/Deafness,1 Action,30 ft,1,0,,1 minute,0,2,necromancy
+38,Blink,1 Action,Self,1,1,,1 minute,0,3,transmutation
+39,Blur,1 Action,Self,1,0,,up to 1 minute,1,2,illusion
+40,Branding Smite,1 bonus action,Self,1,0,,up to 1 minute,0,2,evocation
+41,Burning Hands,1 Action,Self,1,1,,Instantaneous,0,1,evocation
+42,Call Lightning,1 Action,120 ft,1,1,,up to 10 minutes,1,3,conjuration
+43,Calm Emotions,1 Action,60 ft,1,1,,up to 1 minute,1,2,enchantment
+44,Chain Lightning,1 Action,150 ft,1,1,bit of fur; amber glass or crystal rod; 3 silver pins,instantaneous,0,6,evocation
+45,Charm Person,1 Action,30 ft,1,1,,1 hour,0,1,enchantment
+46,Chill Touch,1 Action,120 ft,1,1,,1 round,0,0,necromancy
+47,Chromatic Orb,1 Action,90 ft,1,1,diamond worth at least 50gp,instantaneous,0,1,evocation
+48,Circle of Death,1 Action,150 ft,1,1,powder of crushed black pearl worth >500gp,instantaneous,0,6,necromancy
+49,Circle of Power,1 Action,self,1,0,,up to 10 minutes,1,5,abjuration
+50,Clairvoyance,10 minutes,1 mile,1,1,"focus worth 100gp, geweled horn or glass eye",up to 10 minutes,1,3,divination
+51,Clone,1 hour,Touch,1,1,"diamond 1000gp and flesh of creature, vessel worth 2000gp that can hold creature filled with salt water",instantaneous,0,8,necromancy
+52,Cloud of Daggers,1 Action,60 ft,1,1,sliver of glass,up to 1 minute,1,2,conjuration
+53,Cloudkill,1 Action,120 ft,1,1,,up to 10 minutes,1,5,conjuration
+54,Color Spray,1 Action,Self,1,1,"pinch of powder colored red, yellow, and blue",1 round,0,1,illusion
+55,Command,1 Action,60 ft,1,0,,1 round,0,1,enchantment
+56,Commune,1 minute,self,1,1,incense and a vial of holy or unholy water,1 minute,0,5,divination
+57,Commune with Nature,1 minute,self,1,1,,instantaneous,0,5,divination
+58,Compelled Duel,1 bonus action,30 ft,1,0,,up to 1 minute,1,1,enchantment
+59,Comprehend Languages,1 Action,Self,1,1,pinch of soot and salt,1 hour,0,1,divination
+60,Compulsion,1 Action,30 ft,1,1,,up to 1 minute,1,4,enchantment
+61,Cone of Cold,1 Action,Self,1,1,small crystal or glass cone,instantaneous,0,5,evocation
+62,Confusion,1 Action,90 ft,1,1,3 nut shells,up to 1 minute,1,4,enchantment
+63,Conjure Animals,1 Action,60 ft,1,1,,up to 1 hour,1,3,conjuration
+64,Conjure Barrage,1 Action,self,1,1,one piece of ammunition,instantaneous,0,3,conjuration
+65,Conjure Celestial,1 minute,90 ft,1,1,,up to 1 hour,1,7,conjuration
+66,Conjure Elemental,1 minute,90 ft,1,1,"one of: burning incense, soft clay, sulfur and phosphorus, water and sand",up to 1 hour,1,5,conjuration
+67,Conjure Fey,1 minute,90 ft,1,1,,up to 1 hour,1,6,conjuration
+68,Conjure Minor Elementals,1 minute,90 ft,1,1,,up to 1 hour,1,4,conjuration
+69,Conjure  Volley,1 action,150 ft,1,1,one piece of ammunition,instantaneous,0,5,conjuration
+70,Conjure Woodland Beings,1 Action,60 ft,1,1,one holly berry per creature,up to 1 hour,1,4,conjuration
+71,Contact Other Plane,1 minute,Self,1,0,,1 minute,0,5,divination
+72,Contagion,1 Action,Touch,1,1,,7 days,0,5,necromancy
+73,Contingency,10 minutes,Self,1,1,"a stattuette of yourself in ivory, decorated with 1500gp of gems",10 days,0,6,evocation
+74,Continual Flame,1 Action,Touch,1,1,"ruby dust worth 50gp, consumed",until dispelled,0,2,evocation
+75,Control Water,1 Action,300 ft,1,1,"drop of water, pinch of dust",up to 10 minutes,1,4,transmutation
+76,Control Weather,10 minutes,Self,1,1,burning incense and bits of earth and wood mixed in water,up to 8 hours,1,8,transmutation
+77,Cordon of Arrows,1 Action,5 ft,1,1,four or more arrows or bolts,8 hours,0,2,transmutation
+78,Counterspell,1 reaction,60 ft,0,1,,instantaneous,0,3,abjuration
+79,Create Food and Water,1 action,30 ft,1,1,,instantaneous,0,3,conjuration
+80,Create or Destroy Water,1 Action,30 ft,1,1,"drop of water, or a few grains of sand",instantaneous,0,1,transmutation
+81,Create Undead,1 minute,10 ft,1,1,"clay pot with grave dirt, clay pot with brackish water, 150 gp black onyx stone per corpse",instantaneous,0,6,necromancy
+82,Creation,1 minute,30 ft,1,1,tiny piece of matter the same as the item you want to create,Special,0,5,illusion
+83,Crown of Madness,1 Action,120 ft,1,1,,up to 1 minute,1,2,enchantment
+84,Crusader's Mantle,1 Action,Self,1,0,,up to 1 m inute,1,3,evocation
+85,Cure Wounds,1 Action,Touch,1,1,,instantaneous,0,1,evocation
+86,Dancing Lights,1 Action,120 ft,1,1,"bit of  phosphorus or wychwood, or a glowworm",up to 1 minute,1,0,evocation
+87,Darkness,1 Action,60 ft,1,0,"bat fur, pitch or piece of coal",up to 10 minutes,1,2,evocation
+88,Darkvision,1 Action,touch,1,1,dried carrot or an agate,8 hours,0,2,transmutation
+89,Daylight,1 Action,60 ft,1,1,,1 hour,0,3,evocation
+90,Death Ward,1 Action,touch,1,1,,8 hours,0,4,abjuration
+91,Delayed Blast Fireball,1 Action,150 ft,1,1,tiny ball of baat guano and sulfer,up to 1 minute,1,7,evocation
+92,Demiplane,1 Action,60 ft,0,1,,1 hour,0,8,conjuration
+93,Destructive Wave,1 Action,self,1,0,,instantaneous,0,5,evocation
+94,Detect Evil and Good,1 Action,Self,1,1,,up to 10 minutes,1,1,divination
+95,Detect Magic,1 Action,self,1,1,,up to 10 minutes,1,1,divination
+96,Detect Poson and Disease,1 Action,self,1,1,a yew leaf,up to 10 minutes,1,1,divination
+97,Detect Thoughts,1 Action,self,1,1,copper piece,up to 1 minute,1,2,divination
+98,Dimension Door,1 Action,500 ft,1,0,,instantaneous,0,4,conjuration
+99,Disguise Self,1 Action,self,1,1,,1 hour,0,1,illusion
+100,Disintegrate,1 Action,60 ft,1,1,loadstone and a pinch of dust,instantaneous,0,6,transmutation
+101,Dispel  Evil and Good,1 Action,self,1,1,holy water or powdered silver and iron,up to 1 minute,1,5,abjuration
+102,Dispel magic,1 Action,120 ft,1,1,,instantaneous,0,3,abjuration
+103,Dissonant Whispers,1 Action,60 ft,1,0,,instantaneous,0,1,enchantment
+104,Divination,1 Action,self,1,1,"incese and a sacrificial offering appropriate to your religion,  worth 25gp, consumed",instantaneous,0,4,divination
+105,Divine Favor,1 bonus action,self,1,1,,up to 1 minute,1,1,evocation
+106,Divine Word,1 bonus action,30 ft,1,0,,instantaneous,0,7,evocation
+107,Dominate Beast,1 Action,60 ft,1,1,,up to 1 minute,1,4,enchantment
+108,Dominate Monster,1 Action,60 ft,1,1,,up to 1 hour,1,8,enchantment
+109,Dominate Person,1 Action,60 ft,1,1,,up to 1 minute,1,5,enchantment
+110,Drawmij's Instant Summons,1 m inute,Touch,1,1,1000gp sapphire,until dispelled,0,6,conjuration
+111,Dream,1 minute,Special,1,1,"handful of sand, dab of ink, writing quill from sleeping bird",8 hours,0,5,illusion
+112,Druidcraft,1 Action,30  ft,1,1,,instantaneous,0,0,transmutation
+113,Earthquake,1 Action,500 ft,1,1,"pinch of dirt, piece of rock, and lump of clay",up to 1 minute,1,8,evocation
+114,Eldritch Blast,1 Action,120 ft,1,1,,instantaneous,0,0,evocation
+115,Elemental Weapon,1 Action,Touch,1,1,,up to 1 hour,1,3,transmutation
+116,Enhance Ability,1 Action,Touch,1,1,fur or a feather from a beast,up to 1 hour,1,2,transmutation
+117,Enlarge/Reduce,1 Action,30 ft,1,1,powdered iron,up to 1 minute,1,2,transmutation
+118,Ensnaring Strike,1 bonus action,self,1,0,,up to 1 minute,1,1,conjuration
+119,Entangle,1 Action,90 ft,1,1,,up to 1 minute,1,1,conjuration
+120,Enthrall,1 Action,60 ft,1,1,,1 minute,0,2,enchantment
+121,Etherealness,1 Action,Self,1,1,,up to 8 hours,0,7,transmutation
+122,Evard's Black Tentacles,1 Action,90 ft,1,1,piece of tentacle from a giant octopus or giant squid,up to 1 minute,1,4,conjuration
+123,Expeditious Retreat,1 bonus action,Self,1,1,,up to 10 minutes,1,1,transmutation
+124,Eyebite,1 Action,Self,1,1,,up to 1 minute,1,6,necromancy
+125,Fabricate,10 minutes,120 ft,1,1,,instantaneous,0,4,transmutation
+126,Faerie Fire,1 Action,60 ft,1,0,,up to 1 minute,1,1,evocation
+127,False Life,1 Action,Self,1,1,small amount of alcohol or distilled spirits,1 hour,0,1,necromancy
+128,Fear,1 Action,self,1,1,white feather or the heart of a hen,up to 1 minute,1,3,illusion
+129,Feather Fall,1 reaction,60 ft,1,0,small feather or piece of down,1 minute,0,1,transmutation
+130,Feeblemind,1 Action,150 ft,1,1,"handful of clay, crystal, glass, or mineral spheres",instantaneous,0,8,enchantment
+131,Feign Death,1 Action,Touch,1,1,pinch of graveyard dirt,1 hour,0,3,necromancy
+132,Find Familiar,1 hour,10 feet,1,1,"10 gp of charcoal, incense and herbs that are consumed by fire in brass brazier",instantaneous,0,1,conjuration
+133,Find Steed,10 minutes,30 ft,1,1,,instantaneous,0,2,conjuration
+134,Find the Path,1 minute,Self,1,1,"set of divinatory tools worth 100gp, object from location you wish to find",up to 1 day,1,6,divination
+135,Find Traps,1 Action,120 ft,1,1,,instantaneous,0,2,divination
+136,Finger of Death,1 Action,60 ft,1,1,,instantaneous,0,7,necromancy
+137,Fireball,1 Action ,150 ft,1,1,tiny ball of bat guano and sulfur,instantaneous,0,3,evocation
+138,Fire Bolt,1 Action,120 ft,1,1,,instantaneous,0,0,evocation
+139,Fire Shield,1 Action,Self,1,1,bit of phosphorus or a firefly,10 minutes,0,4,evocation
+140,Fire Storm,1 Action,150 ft,1,1,,instantaneous,0,7,evocation
+141,Flame Blade,1 bonus action,Self,1,1,leaf of sumac,up to 10 minutes,1,2,evocation
+142,Flame Strike,1 Action,60 ft,1,1,pinch of sulfur,instantaneous,0,5,evocation
+143,Flaming Sphere,1 Action,60 ft,1,1,"bit of tallow, a pinch of brimstone, dusting of powdered iron",up to 1 minute,1,2,conjuration
+144,Flesh to Stone,1 Action,50 ft,1,1,"pinch of lime, water, and earth",up to 1 minute,1,6,transmutation
+145,Fly,1 Action,Touch,1,1,wing feather from any bird,up to 10 minutes,1,3,transmutation
+146,Fog Cloud,1 Action,120 ft,1,1,,up to 1 hour,1,1,conjuration
+147,Forbiddance,10 minutes,Touch,1,1,"sprinking of holy water, rare incense, and powdered ruby worthat least 1000gp",1 day,0,6,abjuration
+148,Forcecage,1 Action,100ft,1,1,ruby dust worth 1500gp,1 hour,0,7,evocation
+149,Foresight,1 minute,Touch,1,1,hummingbird feather,8 hours,0,9,divination
+150,Freedom of Movement,1 Action,Touch,1,1,"leather strap, bound around the arm or a similar appendage",1 hour,0,4,abjuration
+151,Friends,1 Action,Self,0,1,small amount of makeup applied to the face as spell is cast,up to 1 minute,1,0,enchantment
+152,Gaseous Form,1 Action,Touch,1,1,bit of gauze and wisp of smoke,up to 1 hour,1,3,transmutation
+153,Gate,1 Action,60 ft,1,1,diamond worth 5000 gp,up to 1 minute,1,9,conjuration
+154,Geas,1 minute,60 ft,1,0,,30 days,0,5,enchantment
+155,Gentle Repose,1 Action,Touch,1,1,pinch of salt and one copper piece placed on corpse's eyes,10 days,0,2,necromancy
+156,Giant Insect,1 Action,30 ft,1,1,,up to 10 minutes,1,4,transmutation
+157,Glibness,1 Action,Self,1,0,,1 hour,0,8,transmutation
+158,Globe of Invulnerability,1 Action,Self,1,1,glass grystal bead that shatters at end of spell,up to 1 minute,1,6,abjuration
+159,Glyph of Warding,1 hour,Touch,1,1,"incense and powdered diamond worth at least 200gp, consumed",until displled or triggered,0,3,abjuration
+160,Goodberry,1 Action,Touch,1,1,sprig of mistletoe,instantaneous,0,1,transmutation
+161,Grasping Vine,1 bonus action,30 ft,1,1,,up to 1 minute,1,4,conjuration
+162,Grease,1  Action,60 ft,1,1,bit of pork rind or butter,1 minute,0,1,conjuration
+163,Greater Invisibility,1 Action,Touch,1,1,,up to 1 minute,1,4,illusion
+164,Greater Restoration,1 Action,Touch,1,1,"diamond dust worth at least 100gp, consumed",instantaneous,0,5,abjuration
+165,Guardian of Faith,1 Action,30 ft,1,0,,8 hours,0,4,conjuration
+166,Guards and Wards,10 minutes,Touch,1,1,"burning incense, a small measure of brimstone and oil, knotted string, small amount of umber hulk blood, silver rod worth 10gp",24 hours,0,6,abjuration
+167,Guidance,1 Action,Touch,1,1,,up to 1 minute,1,0,divination
+168,Guiding Bolt,1 Action,120 ft,1,1,,1 round,0,1,evocation
+169,Gust of Wind,1 Action,Self,1,1,legume seed,up to 1 minute,1,2,evocation
+170,Hail of Thorns,1 bonus action,Self,1,0,,up to 1 minute,1,1,conjuration
+171,Hallow,24 hours,Touch,1,1,"herbs, oils, and incense worth at least 1000gp, consumed",until dispelled,0,5,evocation
+172,Hallucinatory Terrain,10 minutes,300 ft,1,1,"stone, twig, bit of green plant",24 hours,0,4,illusion
+173,Harm,1 Action,60 ft,1,1,,instantaneous,0,6,necromancy
+174,Haste,1 Action,30 ft,1,1,shaving of licorice root,up to 1 minute,1,3,transmutation
+175,Heal,1 Action,60 ft,1,1,,instantaneous,0,6,evocation
+176,Healing Word,1 bonus action,60 ft,1,0,,instantaneous,0,1,evocation
+177,Heat Metal,1 Action,60 ft,1,1,piece of iron and a flame,up to 1 minute ,1,2,transmutation
+178,Hellish Rebuke,1 reaction,60 ft,1,1,,instantaneous,0,1,evocation
+179,Heroes' Feast,10 minutes,30 ft,1,1,"gem-encrusted bowl worth at least 1000gp, consumed",instantaneous,0,6,conjuration
+180,Heroism,1 Action,Touch,1,1,,up to 1 minute,1,1,enchantment
+181,Hex,1 bonus action,90 ft,1,1,the petrified eye of anewt,up to 1 hour,1,1,enchantment
+182,Hold Monster,1 Action,90 ft,1,1,"small, straight piece of iron",up to 1 minute,1,5,enchantment
+183,Hold Person,1 Action,60 ft,1,1,"small, straight piece of iron",up to 1 minute,1,2,enchantment
+184,Holy Aura,1 Action,Self,1,1,"tiny reliquary worth 1000gp, containing a sacred relic",up to 1 minute,1,8,abjuration
+185,Hunger of Hadar,1 Action,150 ft,1,1,pickled octopus tentacle,up to 1 minute,1,3,conjuration
+186,Hunter's mark,1 bonus action,90 ft,1,0,,up to 1 hour,1,1,divination
+187,Hypnotic Pattern,1 Action,120 ft,0,1,glowing stick of incense or a crystal vial with psosphorecent material,up to 1 minute,1,3,illusion
+188,Ice Storm,1 Action ,300 ft,1,1,pinch of dust and a few drops of water,instantaneous,0,4,evocation
+189,Identify,1 minute,Touch,1,1,pearl worth at least 100 gp and and owl feather,instantaneous,0,1,divination
+190,Illusory Script,1 minute,Touch,0,1,"lead based ink worth at least 10 gp, consumed",10 days,0,1,illusion
+191,Imprisonment,1 minute,30 ft,1,1,"a vellum depiction or carved statuette like the target, special item depending on use worth 500gp per hit die",until dispelled,0,9,abjuration
+192,Incendiary Cloud,1 Action,150 ft,1,1,,up to 1 minute,1,8,conjuration
+193,Inflict Wounds,1 Action,Touch,1,1,,instantaneous,0,1,necromancy
+194,Insect Plauge,1 Action,300 ft,1,1,"few grains of sugar, some kernels fo grain, smear of fat",up to 10 minutes,1,5,conjuration
+195,Invisibility,1 Action,Touch,1,1,eyelash encased in gum arabic,up to 1 hour,1,2,illusion
+196,Jump,1 Action,Touch,1,1,grasshopper's hind leg,1 munite,0,1,transmutation
+197,Knock,1 Action,60 ft,1,0,,instantaneous,0,2,transmutation
+198,Legend Lore,10 minutes,self,1,1,"incense worth at least 250 gp, consumed, and four ivory strips worth at least 50 gp each",instantaneous,0,5,divination
+199,Leomund's Secret Chest,1 Action,Touch,1,1,"an exquisite chest 3x2x2 ft worth at least 5000gp, and tiny replica worth 50 gp",instantaneous,0,4,conjuration
+200,Leomund's Tiny Hut,1 m inute,self,1,1,small crystal bead,8 hours,0,3,evocation
+201,Lesser Restoration,1 Action,Touch,1,1,,instantaneous,0,2,abjuration
+202,Levitate,1 Action,60 ft,1,1,either a small elather loop or piece of golden wire bent into a cup shape with long shank on one end,up to 10 minutes,1,2,transmutation
+203,Light,1 Action,Touch,1,0,"firefly, or phosphorescent moss",1 hour,0,0,evocation
+204,Lightning Arrow,1 bonus action,self,1,1,,up to 1 minute,1,3,transmutation
+205,Lightning Bolt,1 Action,self,1,1,"bit of fur, and rod of amber, crystal, or glass",instantaneous,0,3,evocation
+206,Locate Animals or Plants,1 Action,self,1,1,bit of fur from a bloodhound,instantaneous,0,2,divination
+207,Locate Creature,1 Action,Self,1,1,bit of fur from a bloodhound,up to 1 hour,1,4,divination
+208,Locate Object,1 Action,Self,1,1,forked twig,up to 10 minutes,1,2,divination
+209,Longstrider,1 Action,Touch,1,1,pinch of dirt,1 hour,0,1,transmutation
+210,Mage Armor,1 Action,Touch,1,1,piece of cured leather,8 hours,0,1,abjuration
+211,Mage hand,1 Action,30 ft,1,1, ,1 minute,0,0,conjuration
+212,Magic Circle,1 minute,10 ft,1,1,"holy water or powdered silver and iron worth 100gp, consumed",1 hour,0,3,abjuration
+213,Magic Jar,1 minute,self,1,1,"a gem, crystal, reliquary, or some other ornamental container worth 500gp",until dispelled,0,6,necromancy
+214,Magic Missle,1 Action,120 ft,1,1,,instantaneous,0,1,evocation
+215,Magic Mouth,1 minute,30 ft,1,1,"small bit of honeycomb and jade dust worth 10gp, consumed",until dispelled,0,2,illusion
+216,Magic Weapon,1 bonus action,touch,1,1,,up to 1 hour,1,2,transmutation
+217,Major Image,1 Action,120 ft,1,1,bit of fleece,up to 10 minutes,1,3,illusion
+218,Mass Cure Wounds,1 Action,60 ft,1,1,,instantaneous,0,5,evocation
+219,Mass Heal,1 Action,60 ft,1,1,,instantaneous,0,9,evocation
+220,Mass Healing Word,1 bonus action,60 ft,1,0,,instantaneous,0,3,evocation
+221,Mass Suggestion,1 Action,60 ft,1,0,snake's tongue and either a bit of honeycomb or a drop of sweet oil,24 hours,0,6,enchantment
+222,Maze,1 Action,60 ft,1,1,,up to 10 minutes,1,8,conjuration
+223,Meld Into Stone,1 Action,Touch,1,1,,8 hours,0,3,transmutation
+224,Melf's Acid Arrow,1 Action,90 ft,1,1,powdered rhubarb leaf and an adder's s tomach,instantaneous,0,2,evocation
+225,Mending,1 minute,Touch,1,1,two loadstones,instantaneous,0,0,transmutation
+226,Message,1 Action,120 ft,1,1,short piece of copper wire,1 round,0,0,transmutation
+227,Meteor Swarm,1 Action,1 mile,1,1,,instantaneous,0,9,evocation
+228,Mind Blank,1 Action,Touch,1,1,,24 hours,0,8,abjuration
+229,Minor Illusion,1 Action,30 ft,0,1,bit of fleece,1 minute,0,0,illusion
+230,Mirage Arcane,10 minutes,Sight,1,1,,10 days,0,7,illusion
+231,Mirror Image,1 Action,self,1,1,,1 minute,0,2,illusion
+232,Mislead,1 Action,Self,0,1,,up to 1 hour,1,5,illusion
+233,Misty Step,1 bonus action,self,1,0,,instantaneous,0,2,conjuration
+234,Modify Memory,1 Action,30 ft,1,1,,up to 1 minute,1,5,enchantment
+235,Moonbeam,1 Action,120 ft,1,1,several seeds of any moonseed plant and a piece of opalescent feldspar,up to 1 minute,1,2,evocation
+236,Mordenkainen's Faithful Hound,1 Action,30 ft,1,1,"tiny silver whistle and piece of bone, and a thread",8 hours,0,4,conjuration
+237,Mordenkainen's Magnificent Mansion,1 minute,300 ft,1,1,"minature portal carved from ivory, small piece of polished marble, a tiny silver spoon, each > 5gp",24 hours,0,7,conjuration
+238,Mordenkainen's Private Sanctum,10 minutes,120 ft,1,1,"thin sheet of lead, piece of opaque glass, wad of cotton or cloth, powdered chrysolite",24 hours,0,4,abjuration
+239,Mordenkainen's Sword,1 Action,60 ft,1,1,"minature platinum sword w ith grip and pommel of copper and zinc, worth 250gp",up to 1 minute,1,7,evocation
+240,Move Earth,1 Action,120 ft,1,1,"iron blade and small bag with mixture of soils -  clay loam, sand",up to 2 hours,1,6,transmutation
+241,Nondetection,1 Action,touch,1,1,"pinch of diamond dust worth 25 gp, consumed",8 hours,0,3,abjuration
+242,Nystul's Magic Aura,1 Action,Touch,1,1,small square of silk,24 hours,0,2,illusion
+243,Otiluke's Freezing Sphere,1 Action,300 ft,1,1,small crystal sphere,instantaneous,0,6,evocation
+244,Otiluke's Resilient Sphere,1 Action,30 ft,1,1,hemispherical  piece of clear crystal and matching piece of gum arabic,up to 1 minute,1,4,evocation
+245,Otto's Irresistible Dance,1 Action,30 ft,1,0,,up to 1 minute,1,6,enchantment
+246,Pass without Trace,1 Action,self,1,1,ashes from burned leaf of mistletoe and sprig of spruce,up to 1 hour,1,2,abjuration
+247,Passwall,1 Action,30 ft,1,1,pinch of sesame seed,1 hr,0,5,transmutation
+248,Phantasmal Force,1 Action,60 ft,1,1,bit of fleece,up to 1 minute,1,2,illusion
+249,Phantasmal Killer,1 Action,120 ft,1,1,,up to 1 minute,1,4,illusion
+250,Phantom Steed,1 minute,30 ft,1,1,,1 hour,0,3,illusion
+251,Planar Ally,10 min,60 ft,1,1,,instantaneous,0,6,conjuration
+252,Planar Binding,1 hour,60 ft,1,1,"jewel worth at least 1000 gp, consumed",24 hours,0,5,abjuration
+253,Plane Shift,1 Action,Touch,1,1,"a forked, metal rod worth at least 250 gp, attuned to a particular plane",instantaneous,0,7,conjuration
+254,Plant Growth,1 Action or 8 hours,150ft,1,1,,instantaneous,0,3,transmutation
+255,Polymorph,1 Action,60 ft,1,1,caterpillar cocoon,up to 1 hour,1,4,transmutation
+256,Power Word Heal,1 Action,Touch,1,1,,instantaneous,0,9,evocation
+257,Power Word Kill,1 Action,60 ft,1,0,,instantaneous,0,9,enchantment
+258,Power Word Stun,1 Action,60 ft,1,0,,instantaneous,0,8,enchantment
+259,Prayer of Healing,10 minutes,30 ft,1,0,,instantaneous,0,2,evocation
+260,Prestidigitation,1 Action,10 ft,1,1,,up to 1 hour,0,0,transmutation
+261,Prismatic Spray,1 Action,Self,1,1,,instantaneous,0,7,evocation
+262,Prismatic Wall,1 Action,60 ft,1,1,,10 minutes,0,9,abjuration
+263,Produce Flame,1 Action,self,1,1,,10 minutes,0,0,conjuration
+264,Programmed Illusion,1 Action,120 ft,1,1,"bit of fleece, and jade dust worth 25 gp",until dispelled,0,6,illusion
+265,Project Image,1 Action,500 miles,1,1,small replica of you made of materials worth > 5 gp,up to 1 day,1,7,illusion
+266,Protection From Energy,1 Action,Touch,1,1,,up to 1 hour,1,3,abjuration
+267,Protection from Evil and Good,1 Action,Touch,1,1,"holy water or pwdered silver and iron, consumed",up to 10 minutes,1,1,abjuration
+268,Protection from Poison,1 Action,Touch,1,1,,1 hour,0,2,abjuration
+269,Purify Food and Drink,1 Action,10 ft,1,1,,instantaneous,0,1,transmutation
+270,Raise Dead,1 hour,touch,1,1,"a diamond worth at least 500gp, consumed",instantaneous,0,5,necromancy
+271,Rary's Telepathic Bond,1 Action,30 ft,1,1,piece of eggshell from two different kind of creatures,1 hour,0,5,divination
+272,Ray of Enfeeblement,1 Action,60 ft,1,1,,up to 1 minute,1,2,necromancy
+273,Ray of Frost,1 Action,60 ft,1,1,,instantaneous,0,0,evocation
+274,Ray of Sickness,1 Action,60 ft,1,1,,instantaneous,0,1,necromancy
+275,Regenerate,1 minute,touch,1,1,prayer wheel and holy water,1 hour,0,7,transmutation
+276,Reincarnate,1 Hour,Touch,1,1,"rare oils and uguents worth at least 1000gp, consumed",instantaneous,0,5,transmutation
+277,Remove Curse,1 Action,Touch,1,1,,instantaneous,0,3,abjuration
+278,Resistance,1 Action,Touch,1,1,miniature cloak,up to 1 minute,1,0,abjuration
+279,Resurrection,1 Hour,Touch,1,1,"a diamond worth 1000gp, consumed",instantaneous,0,7,necromancy
+280,Reverse Gravity,1 Action,100 ft,1,1,loadstone and iron filings,up to 1 minute,1,7,transmutation
+281,Revivify,1 Action,Touch,1,1,"a  diamond worth 300 gp, consumed",instantaneous,0,3,necromancy
+282,Rope Trick,1 Action,Touch,1,1,powdered corn extract and a twisted loop of parchment,1 hour,0,2,transmutation
+283,Sacred Flame,1 Action,60 ft,1,1,,instantaneous,0,0,evocation
+284,Sanctuary,1 bonus action,30 ft,1,1,small silver mirror,1 minute,0,1,abjuration
+285,Scorching Ray,1 Action,120 ft,1,1,,instantaneous,0,2,evocation
+286,Scrying,10 minutes ,Self,1,1,focus worth 1000gp,up to 10 minutes,1,5,divination
+287,Searing Smite,1 bonus action,Self,1,0,,up to 1 minute,1,1,evocation
+288,See Invisibility,1 Action,Self,1,1,pinch of talc and small sprinkling of powdered silver,1 hour,0,2,divination
+289,Seeming,1 Action,30 ft,1,1,,8 hours,0,5,illusion
+290,Sending,1 Action,Unlimited,1,1,a short piece of fine copper wire,1 round,0,3,evocation
+291,Sequester,1 Action,Touch,1,1,"powdered composed of diamond, emerald, ruby, and sapphire worth 5000 gp, consumed",until dispelled,0,7,transmutation
+292,Shapechange,1 Action,Self,1,1,jade circlet worth at least 1500gp,up to 1 hour,1,9,transmutation
+293,Shatter,1 Action,60 ft,1,1,chip of mica,instantaneous,0,2,evocation
+294,Shield,1 reaction,Self,1,1,,1 round,0,1,abjuration
+295,Shield of Faith,1 bonus action,60 ft,1,1,a small parchment with a bit of holy text,up to 10 minutes,1,1,abjuration
+296,Shillelagh,1 bonus action,touch,1,1,"mistletoe, shamrock leaf, and a club or quarterstaff",1 minute,0,0,transmutation
+297,Shocking Grasp,1 Action,Touch,1,1,,instantaneous,0,0,evocation
+298,Silence,1 Action,120 ft,1,1,,up to 10 minutes,1,2,illusion
+299,Silent Image,1 Action,60 ft,1,1,bit of fleece,up to 10 minutes,1,1,illusion
+300,Simulacrum,12 hours,Touch,1,1,"snow or ice in sufficent quantity, some hair, fingernail clippings, and a powdered ruby worth 1500gp, consumed",until dispelled,0,7,illusion
+301,Sleep,1 Action,90 ft,1,1,"pinch of fine sand, rose petals, cricket",1 minute,0,1,enchantment
+302,Sleet Storm,1 Action,150 ft,1,1,pinch of dust and a few drops of water,up to 1 minute,1,3,conjuration
+303,Slow,1 Action,120 ft,1,1,drop of molasses,up to 1 minute,1,3,transmutation
+304,Spare the Dyhing,1 Action,Touch,1,1,,instantaneous,0,0,necromancy
+305,Speak with Animals,1 Action,Self,1,1,,10 minutes,0,1,divination
+306,Speak with Dead,1 Action,10 ft,1,1,burning incense,10 minutes,0,3,necromancy
+307,Speak with Plants,1 Action,Self,1,1,,10 minutes,0,3,transmutation
+308,Spider Climb,1 Action,Touch,1,1,drop of bitumen and a spider,up to 1 hour,1,2,transmutation
+309,Spike Growth,1 Action,150 ft,1,1,seven sharp thorns or seven small twigs (sharpened),up to 10 minutes,1,2,transmutation
+310,Spirit Guardians,1 Action,Self,1,1,a holy symbol,up to 10 minutes,1,3,conjuration
+311,Spiritual Weapon,1 bonus action,60 ft,1,1,,1 minute,0,2,evocation
+312,Staggering Smite,1 bonus action,Self,1,0,,up to 1 minute,1,4,evocation
+313,Stinking Cloud,1 Action,90 ft,1,1,rotten egg or several skunk cabbage leaves,up to 1 minute,1,3,conjuration
+314,Stone Shape,1 Action,Touch,1,1,"soft clay, which must be worked into roughly the desired shape",instantaneous,0,4,transmutation
+315,Stoneskin,1 Action,Touch,1,1,"diamond dust worth 100gp, consumed",up to 1 hour,1,4,abjuration
+316,Storm of Vengeance,1 Action,Sight,1,1,,up to 1 minute,1,9,conjuration
+317,Suggestion,1 Action,30 ft,1,0,snake's tongue and either a bit of honeycomb or a drop of sweet oil,up to 8 hours,1,2,enchantment
+318,Sunbeam,1 Action,Self,1,1,magnifying glass,up to 1 minute,1,6,evocation
+319,Sunburst,1 Action,150 ft,1,1,fire and a piece of sunstone,instantaneous,0,8,evocation
+320,Swift Quiver,1 bonus action,Touch,1,1,quiver containing at least piece of ammunition,up to 1 minute,1,5,transmutation
+321,Symbol,1 minute,Touch,1,1,"mercury, phosphorus, and powdered diamond and opal worth 1000gp, consumed",until dispelled or triggered,0,7,abjuration
+322,Tasha's Hideous Laughter,1 Action,30 ft,1,1,tiny farts and a feather that is waved in the air,up to 1 minute,1,1,enchantment
+323,Telekinesis,1 Action,60 ft,1,1,,up to 10 minutes,1,5,transmutation
+324,Telepathy,1 Action,Unlimited,1,1,a pair of linked silver rings,24 hours,0,8,evocation
+325,Teleport,1 Action,10 ft,1,0,,instantaneous,0,7,conjuration
+326,Teleportation Circle,1 minute,10 ft,1,0,"rare  chalks and inks infused with gems worth 50 gp, consumed",1 round,0,5,conjuration
+327,Tenser's Floating Disk,1 Action,30 ft,1,1,drop of mercury,1 hour,0,1,conjuration
+328,Thaumaturgy,1 Action,30 ft,1,0,,up to 1 minute,0,0,transmutation
+329,Thorn Whip,1 Action,30 ft,1,1,stem of plant with thorns,instantaneous,0,0,transmutation
+330,Thunderous Smite,1 bonus action,Self,1,0,,up to 1 minute,1,1,evocation
+331,Thunderwave,1 Action,Self,1,1,,instantaneous,0,1,evocation
+332,Time Stop,1 Action,Self,1,0,,instantaneous,0,9,transmutation
+333,Tongues,1 Action,Touch,1,0,small clay model of a ziggurat,1 hour,0,3,divination
+334,Transport Via Plants,1 Action,10 ft,1,1,,1 round,0,6,conjuration
+335,Tree Stride,1 Action,Self,1,1,,up to 1 minute,1,5,conjuration
+336,True Polymorph,1 Action,30 ft,1,1,"a drop of mercury, dollop of gum arabic, and a wisp of smoke",up to 1 hour,1,9,transmutation
+337,True Resurrection,1 hour,Touch,1,1,sprinkle of holy water and diamonds worth at least 25000gp,instantaneous,0,9,necromancy
+338,True Seeing,1 Action,Touch,1,1,an ointment for the eys that cost 25 gp,1 hour,0,6,divination
+339,Tsunami,1 minute,Sight,1,1,,up to 6 rounds,1,8,conjuration
+340,Unseen Servant,1 Action,60 ft,1,1,bit of string and of wood,1 hour,0,1,conjuration
+341,Vampiric Touch,1 Action,Self,1,1,,up to 1 minute,1,3,necromancy
+342,Vicious Mockery,1 Action,60 ft,1,0,,instantaneous,0,0,enchantment
+343,Wall of Fire,1 Action,120 ft,1,1,a small piece of phosphorus,up to 1 minute,1,4,evocation
+344,Wall of Force,1 Action,120 ft,1,1,pinch of powder made by crushing a clear gemstone,up to 10 minutes,1,5,evocation
+345,Wall of Ice,1 Action,120 ft,1,1,small piece of quarts,up to 10 minutes,1,6,evocation
+346,Wall of Stone,1 Action,120 ft,1,1,small block of granite,up to 10 minutes,1,5,evocation
+347,Wall of Thorns,1 Action,120 ft,1,1,handful of thorns,up to 10 minutes,1,6,conjuration
+348,Warding Bond,1 Action,Touch,1,1,a pair of platinum rings worth 50 gp,1 hour,0,2,abjuration
+349,Water Breathing,1 Action,30 ft,1,1,short reed or piece of straw,24 hours,0,3,transmutation
+350,Water Walk,1 Action,30 ft,1,1,piece of cork,1 hour,0,3,transmutation
+351,Web,1 Action,60 ft,1,1,bit of spiderweb,up to 1 hour,1,2,conjuration
+352,Weird,1 Action,120 ft,1,1,,up to 1 minute,1,9,illusion
+353,Wind Walk,1 minute,30 ft,1,1,fire and holy water,8 hours,0,6,transmutation
+354,Wind Wall,1 Action,120 ft,1,1,tiny fan and a feather of exotic origin,up to 1 minute,1,3,evocation
+355,Wish,1 Action,Self,1,0,,instantaneous,0,9,conjuration
+356,Witch Bolt,1 Action,30 ft,1,1,twig from a tree that has been struck by lightning,up to 1 minute,1,1,evocation
+357,Word of Recall,1 Action,5 ft,1,0,,instantaneous,0,6,conjuration
+358,Wrathful Smite,1 bonus Action,Self,1,0,,up to 1 minute,1,1,evocation
+359,Zone of  Truth,1 Action,60 ft,1,1,,10 minutes,0,2,enchantment

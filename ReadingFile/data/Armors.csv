@@ -1,0 +1,14 @@
+ItemID,BaseAC,AddDex?,StrengthMin,DisAdvOnStealth?,ArmorWeightName
+100,11,1,0,1,Light
+101,11,1,0,0,Light
+102,12,1,0,0,Light
+103,12,1,0,0,Medium
+104,13,1,0,0,Medium
+105,14,1,0,1,Medium
+106,14,1,0,0,Medium
+107,15,1,0,1,Medium
+108,14,0,0,1,Heavy
+109,16,0,13,1,Heavy
+110,17,0,15,1,Heavy
+111,18,0,15,1,Heavy
+112,2,0,0,0,Shield

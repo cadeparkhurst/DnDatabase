@@ -1,0 +1,150 @@
+ItemID,Name,Cost,Weight
+1,Abacus,2gp,2
+2,Acid,25gp,1
+3,Alchemist's fire,50gp,1
+4,arrows,1gp,1
+5,blowgun needle,1gp,1
+6,crowssbow bolts,1gp,1.5
+7,sling bullets,4cp,1.5
+8,antitoxin,50gp,0
+9,crystal,10gp,1
+10,orb,20gp,3
+11,rod,10gp,2
+12,staff,5gp,4
+13,wand,10gp,1
+14,backpack,2gp,5
+15,ball bearings,1gp,2
+16,barrel,2gp,70
+17,basket,4gp,2
+18,bedroll,1gp,7
+19,bell,1gp,0
+20,blanket,5sp,3
+21,block and tackle,1gp,5
+22,book,25gp,5
+23,bottle,2gp,2
+24,bucket,5cp,2
+25,caltrop,1gp,2
+26,candle,1cp,0
+27,"case, crossbow bolt",1gp,1
+28,"case, map or scroll",1gp,1
+29,chain,5gp,10
+30,chalk,1cp,0
+31,chest,5gp,25
+32,climber's kit,25gp,12
+33,"clothes, common",5sp,3
+34,"clothes, costume",5gp,4
+35,"clothes, fine",15gp,6
+36,"clothes, traveler's",2gp,4
+37,component  pouch,25gp,2
+38,crowbar,2gp,5
+39,sprig of mistletoe,1gp,0
+40,totem,1gp,0
+41,wooden staff,5gp,4
+42,yew wand,10gp,1
+43,fishing tackle,1gp,4
+44,flask or tankard,2cp,1
+45,grappling hook,2gp,4
+46,hammer,1gp,3
+47,hammer sledge,2gp,10
+48,healer's kit,5gp,3
+49,amulet,5gp,1
+50,emblem,5gp,0
+51,reliquary,5gp,2
+52,holy water,25gp,1
+53,hourglass,25gp,1
+54,hunting trap,5gp,25
+55,ink,10gp,0
+56,ink pen,2cp,0
+57,jug or  pitcher,2cp,4
+58,ladder (10-ft),1sp,25
+59,lamp,5sp,1
+60,"lantern, bullseye",10gp,2
+61,"lantern, hooded",5gp,2
+62,lock,10gp,1
+63,magnifying glass,100gp,0
+64,manacles,2gp,6
+65,mess kit,2sp,1
+66,"mirror, steel",5gp,0.5
+67,oil,1sp,1
+68,paper,2sp,0
+69,parchment,1sp,0
+70,perfume,5gp,0
+71,"pick, miner's",2gp,10
+72,piton,5cp,0.25
+73,"poison, basic",100gp,0
+74,pole,5cp,7
+75,pot,2gp,10
+76,potion of healing,50gp,0.5
+77,pouch,5sp,1
+78,quiver,1gp,1
+79,"ram, portable",4gp,35
+80,rations,5sp,2
+81,robes,1gp,4
+82,"rope,  hempen",1gp,10
+83,"rope, silk",10gp,5
+84,sack,1cp,0.5
+85,scale,5gp,3
+86,sealing wax,5sp,0
+87,shovel,2gp,5
+88,signal whistle,5cp,0
+89,signet ring,5gp,0
+90,soap,2cp,0
+91,spellbook,50gp,3
+92,"spikes,  iron",1gp,5
+93,spyglass,1000gp,1
+94,"tent, two-person",2gp,20
+95,tinderbox,5sp,1
+96,torch,1cp,1
+97,vial,1gp,0
+98,waterskin,2sp,5
+99,whetstone,1cp,1
+100,Padded,5gp,8
+101,Leather,10gp,10
+102,Studded Leather,45gp,13
+103,Hide,10gp,12
+104,Chain shirt,50gp,20
+105,Scale mail,50gp,45
+106,Breastplate,400gp,20
+107,Half Plate,750gp,40
+108,Ring mail,30gp,40
+109,Chain mail,75gp,55
+110,Splint,200gp,60
+111,Plate,1500gp,65
+112,Shield,10gp,6
+113,Club,1sp,2
+114,Dagger,2gp,1
+115,Greatclub,2sp,10
+116,Handaxe,5gp,2
+117,Javelin,5sp,2
+118,Light Hammer,2gp,2
+119,Mace,5gp,4
+120,Quarterstaff,2sp,4
+121,Sickle,1gp,2
+122,Spear,1gp,3
+123,"Crossbow, light",25gp,5
+124,Dart,5cp,0.25
+125,Shortbow,25gp,2
+126,Sling,1sp,0
+127,Battleaxe,10gp,4
+128,Flail,10gp,2
+129,Glaive,20gp,6
+130,Greataxe,30gp,7
+131,Greatsword,50gp,6
+132,Halberd,20gp,6
+133,Lance,10gp,6
+134,Longsword,15gp,3
+135,Maul,10gp,10
+136,Morningstar,15gp,4
+137,Pike,5gp,18
+138,Rapier,25gp,2
+139,Scimitar,25gp,3
+140,Shortsword,10gp,2
+141,Trident,5gp,4
+142,War Pick,5gp,2
+143,Warhammer,15gp,2
+144,Whip,2gp,3
+145,Blowgun,10gp,1
+146,"Crossbow, hand",75gp,3
+147,"Crossbow, heavy",50gp,18
+148,Longbow,50gp,2
+149,Net,1gp,3
