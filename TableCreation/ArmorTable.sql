@@ -7,3 +7,6 @@ StrengthMin int,
 DisAdvantageonStealth boolean,
 ArmorWeightName ArmorWeightName
 );
+
+ALTER TABLE Armor
+DROP COLUMN Name
