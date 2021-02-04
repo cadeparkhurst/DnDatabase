@@ -27,26 +27,26 @@ public class Stats1 extends JPanel{
 	
 	
 	
-//	private Arraylist<String> getStats(){
-//		String query = "SELECT * \nFROM Character\n";
-//		ArrayList<String> stats = new ArrayList<String>>();
-//		try {
-//			
-//			System.out.println(this.manager.getConnection());
-//			Statement stmt = this.manager.getConnection().createStatement();
-//			      ResultSet rs = stmt.executeQuery(query);
-//			System.out.println(rs);
-//			rs.next();
-//				stats.add(rs.getString(1));
-//				stats.add(rs.getString(2));
-//				stats.add(rs.getString(13));
-//			
-//			System.out.println(stats);
-//			return stats;
-//			
-//		} catch (SQLException e) {
-//			
-//			return stats;
-//		}
-//	}
+	private ArrayList<String> getStats(){
+		String query = "SELECT * \nFROM Character\n";
+		ArrayList<String> stats = new ArrayList<String>();
+		try {
+			
+			System.out.println(this.manager.getConnection());
+			Statement stmt = this.manager.getConnection().createStatement();
+			      ResultSet rs = stmt.executeQuery(query);
+			System.out.println(rs);
+			rs.next();
+				stats.add(rs.getString(1));
+				stats.add(rs.getString(2));
+			stats.add(rs.getString(13));
+			
+			System.out.println(stats);
+			return stats;
+			
+		} catch (SQLException e) {
+			
+			return stats;
+		}
+	}
 }

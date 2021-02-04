@@ -24,35 +24,41 @@ public class PageManager{
 		
 		this.getPanel().add(this.loginPage);
 		
-		this.loginPage.show();
-		System.out.println(this.loginPage.isEnabled());
+		this.loginPage.setVisible(true);;
+		//System.out.println(this.loginPage.isEnabled());
 		this.getFrame().repaint();
 	}
 	
 	public void switchPage(String name) {
-		if (name.equals("character")) {
-			this.characterScreen.show();
+		this.characterScreen.setVisible(false);
+		this.loginPage.setVisible(false);
+		
+		switch(name) {
+		case "character": this.characterScreen.setVisible(true);; break;
+		case "login": this.loginPage.setVisible(true); break;
+		default: break;
 		}
-		else {
-			this.characterScreen.hide();
-		}
-		if (name.equals("login")) {
-			this.loginPage.show();
-		}
-		if (name.equals("login")) {
-			this.loginPage.hide();
-		}
-		if (name.equals("stats1")) {
-			this.loginPage.show();
-		}
-		if (name.equals("stats1")) {
-			this.loginPage.hide();
-		}
+		
+//		if {
+//			this.characterScreen.hide();
+//		}
+//		if (name.equals("login")) {
+//			this.loginPage.show();
+//		}
+//		if (name.equals("login")) {
+//			this.loginPage.hide();
+//		}
+//		if (name.equals("stats1")) {
+//			this.loginPage.show();
+//		}
+//		if (name.equals("stats1")) {
+//			this.loginPage.hide();
+//		}
 		
 		
 		this.getFrame().pack();
 		this.getFrame().repaint();
-		System.out.println("test2");
+		//System.out.println("test2");
 	}
 	
 	public void setConnection(Connection connection) {

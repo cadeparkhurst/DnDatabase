@@ -3,6 +3,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Array;
+import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,7 +26,7 @@ public class CharactersScreen extends JPanel{
 	private JTextField characterField;
 	private JButton newCharButton;
 	
-	public CharactersScreen(PageManager manager) {
+	public CharactersScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
 		this.characters = getCharacterNames();
 		int rows = this.characters.size() > 10? 10:this.characters.size();
@@ -46,21 +47,21 @@ public class CharactersScreen extends JPanel{
 	}
 	
 	public HashMap<String, String> getCharacterNames(){
-		String query = "SELECT Name, CharacterID \nFROM Character\n";
 		try {
 			HashMap<String, String> names = new HashMap<String, String>();
-			System.out.println(this.manager.getConnection());
-			Statement stmt = this.manager.getConnection().createStatement();
-			      ResultSet rs = stmt.executeQuery(query);
-			System.out.println(rs);
+			//System.out.println(this.manager.getConnection());
+			CallableStatement cstmt = this.manager.getConnection().prepareCall("{call GetCharNames}");
+			
+			ResultSet rs = cstmt.executeQuery();
+			//System.out.println(rs);
+			
 			while (rs.next()) {
 				names.put(rs.getString(1), rs.getString(2));
 			}
-			System.out.println(names);
+			//System.out.println(names);
 			return names;
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -88,7 +89,7 @@ public class CharactersScreen extends JPanel{
 				manager.setCharacterScreen(new CharactersScreen(manager));
 				manager.getPanel().add(manager.getCharacterScreen());
 				manager.switchPage("character");
-				System.out.println("test3");
+				//System.out.println("test3");
 				hide();
 				manager.switchPage("Stats1");
 //			}
