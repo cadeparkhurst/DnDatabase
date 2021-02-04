@@ -18,9 +18,9 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.swing.JOptionPane;
 
-public class LoginHelper {
+public class ConnectionHelper {
 	
-	public LoginHelper() {
+	public ConnectionHelper() {
 		
 	}
 	
@@ -31,7 +31,7 @@ public class LoginHelper {
 	private String databaseName;
 	private String serverName;
 
-	public LoginHelper(String serverName, String databaseName) {
+	public ConnectionHelper(String serverName, String databaseName) {
 		//DO NOT CHANGE THIS METHOD
 		this.serverName = serverName;
 		this.databaseName = databaseName;
@@ -40,10 +40,9 @@ public class LoginHelper {
 	public boolean connect() {
 		String connectionString = SampleURL.replace("${dbServer}", this.serverName)
 										   .replace("${dbName}", this.databaseName)
-										   //.replace("${user}", "dndatabasefrontend")
-										   .replace("${user}", "parkhuca")
-										   .replace("${pass}", "Thec@tisyellow");
-										   //.replace("${pass}", "ivor1234");// REPLACE WITH USER ACCOUNT
+										   .replace("${user}", "dndatabasefrontend")
+										   .replace("${pass}", "ivor1234");
+										   
 		try{
 			Connection connectiontemp = DriverManager.getConnection(connectionString);
 			this.connection = connectiontemp;

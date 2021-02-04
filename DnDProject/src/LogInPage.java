@@ -1,7 +1,7 @@
 import java.awt.BorderLayout;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+//import java.awt.Graphics;
+//import java.awt.Graphics2D;
+//import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.security.NoSuchAlgorithmException;
@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
+//import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -19,8 +19,8 @@ import java.util.Random;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
+//import javax.swing.JComponent;
+//import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -31,14 +31,14 @@ public class LogInPage extends JPanel{
 	private JPasswordField PasswordField;
 	private JButton loginButton;
 	private JButton registerButton;
-	private LoginHelper loginHelper;
+	private ConnectionHelper loginHelper;
 	private PageManager manager;
 	private final Base64.Encoder enc = Base64.getEncoder();
 	private final Base64.Decoder dec = Base64.getDecoder();
 	private final Random RANDOM = new SecureRandom();
 	
 	
-	public LogInPage(PageManager manager, LoginHelper loginHelper) {
+	public LogInPage(PageManager manager, ConnectionHelper loginHelper) {
 		this.manager = manager;
 		this.loginHelper = loginHelper;
 		
@@ -68,7 +68,6 @@ public class LogInPage extends JPanel{
 	}
 	
 	public boolean login(String username, String Password) {
-		System.out.println("IN LOGIN");
 		try {
 			CallableStatement cstmt = this.manager.getConnection().prepareCall("{? = call LOGIN(?)}");
 			cstmt.registerOutParameter(1, Types.INTEGER);
@@ -129,7 +128,6 @@ public class LogInPage extends JPanel{
 	}
 	
 	public boolean register(String username, String password) {
-		//TODO: Task 6
 		try {
 			CallableStatement cstmt = this.manager.getConnection().prepareCall("{? = call Register(?,?,?)}");
 			
@@ -167,11 +165,9 @@ public class LogInPage extends JPanel{
 			//boolean connected = loginHelper.connect(UsernameField.getText(),String.valueOf(PasswordField.getPassword()));
 			boolean loginSuccessful = login(UsernameField.getText(), String.valueOf(PasswordField.getPassword()));
 			if (loginSuccessful) {
-				manager.setCharacterScreen(new CharactersScreen(manager));
-				manager.getPanel().add(manager.getCharacterScreen());
+				//manager.setCharacterScreen(new CharactersScreen(manager));
+				//manager.getPanel().add(manager.getCharacterScreen());
 				manager.switchPage("character");
-				System.out.println("test1");
-				hide();
 			}
 		}	
 	}

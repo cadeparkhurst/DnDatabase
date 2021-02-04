@@ -7,3 +7,6 @@
 /PageManager.class
 /Stats1.class
 /LogInPage$RegisterListener.class
+/ConnectionHelper.class
+/CharactersScreen$CharButtonListener.class
+/CharacterDetails.class

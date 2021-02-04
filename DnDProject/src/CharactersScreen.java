@@ -20,11 +20,12 @@ import javax.swing.JTextField;
 
 public class CharactersScreen extends JPanel{
 	private PageManager manager;
-	private LoginHelper loginHelper;
+	private ConnectionHelper loginHelper;
 	private HashMap<String, String> characters;
 	private GridLayout layout;
 	private JTextField characterField;
 	private JButton newCharButton;
+	private HashMap<JButton,String> ButtonToName;
 	
 	public CharactersScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
@@ -37,8 +38,8 @@ public class CharactersScreen extends JPanel{
 		this.setLayout(layout);
 		this.add(characterField).setLocation(2, 0);
 		this.add(newCharButton).setLocation(0, 0);
-		generateButtons();
-		hide();
+		this.ButtonToName = generateButtons();
+		//hide();
 		
 		
 		
@@ -68,39 +69,33 @@ public class CharactersScreen extends JPanel{
 	}
 	
 	
-	private void generateButtons() {
-		JButton button;
+	private HashMap<JButton, String> generateButtons() {
+		HashMap<JButton,String> buttons = new HashMap<>();
+		
 		int index = 1;
 		for(String name: characters.keySet()) {
+			JButton button;
 			button = new JButton();
 			button.setText(name);
 			this.add(button).setLocation(2, index);
-			button.addActionListener(new Listener());
+			button.addActionListener(new CharButtonListener());
+			buttons.put(button, name);
 			index++;
 		}
+		return buttons;
 	}
 	
-	class Listener implements ActionListener {
-
+	class CharButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			manager.setCharacterChosen(characters.get(e.getSource()));
-	//		if (connected) {
-				manager.setCharacterScreen(new CharactersScreen(manager));
-				manager.getPanel().add(manager.getCharacterScreen());
-				manager.switchPage("character");
-				//System.out.println("test3");
-				hide();
-				manager.switchPage("Stats1");
-//			}
+			manager.setCharacterChosen(characters.get(ButtonToName.get(e.getSource())));
+			//manager.setCharacterScreen(new CharactersScreen(manager));
 			
-
-	}
-		
-		
-	
-	
-	
+		//	manager.getPanel().add(manager.getCharacterScreen());
+			System.out.println("CHAR CHOSEN:" + manager.getCharacterChosen());
+			
+			manager.switchPage("Details");
+		}	
 	}
 	
 	
