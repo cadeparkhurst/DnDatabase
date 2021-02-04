@@ -37,58 +37,26 @@ public class LoginHelper {
 		this.databaseName = databaseName;
 	}
 
-	public boolean connect(String user, String pass) {
-		//TODO: Task 1
-		String connectionString = SampleURL.replace("${dbServer}", this.serverName);
-		connectionString = connectionString.replace("${dbName}", this.databaseName);
-		connectionString = connectionString.replace("${user}", user);
-		connectionString = connectionString.replace("${pass}", pass);
-		System.out.println(connectionString);
+	public boolean connect() {
+		String connectionString = SampleURL.replace("${dbServer}", this.serverName)
+										   .replace("${dbName}", this.databaseName)
+										   //.replace("${user}", "dndatabasefrontend")
+										   .replace("${user}", "parkhuca")
+										   .replace("${pass}", "Thec@tisyellow");
+										   //.replace("${pass}", "ivor1234");// REPLACE WITH USER ACCOUNT
 		try{
 			Connection connectiontemp = DriverManager.getConnection(connectionString);
 			this.connection = connectiontemp;
 			return true;
 		}
-		  // Code here.
 		catch (SQLException e) {
 			System.out.println(e.getErrorCode());
 			e.printStackTrace();
 			return false;
 		}
-        
-
 	}
 	
-	public boolean register(String username, String password) {
-		//TODO: Task 6
-		CallableStatement cs = null;
-		ResultSet rs = null;
-		int error = 0;
-		try {
-			cs = this.connection.prepareCall("{? = call Register(?,?)}");
-			cs.registerOutParameter(1, Types.INTEGER);
-			cs.setString(2, username);
-			System.out.println("test1");
-			cs.execute();
-			System.out.println("test2");
-			error = cs.getInt(1);
-			if (error == 1 || error == 2 || error == 3 || error == 4) {
-				JOptionPane.showMessageDialog(null, "Registration Failed"+error);
-				return false;
-			}
-//			if (rs.getString(4) == null) {
-//				return true;
-//			}
-			return true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			
-			if (error == 1) {
-				JOptionPane.showMessageDialog(null, "Registration Failed"+e.getCause());
-			}
-			return false;
-		}
-	}
+
 	
 	
 	public Connection getConnection() {

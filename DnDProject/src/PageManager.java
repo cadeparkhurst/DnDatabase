@@ -16,6 +16,7 @@ public class PageManager{
 		this.setPanel(panel);
 		this.setFrame(frame);
 		this.loginHelper = new LoginHelper("titan.csse.rose-hulman.edu","DnD_goodriat_oriansaj_parkhuca30");
+		this.loginHelper.connect();
 		this.loginPage = new LogInPage(this, loginHelper);
 		this.setCharacterChosen("");
 		
