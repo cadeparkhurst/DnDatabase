@@ -37,20 +37,20 @@ public class AddCharacterScreen extends JPanel{
 	
 	public AddCharacterScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
-
+		this.layout = new GridLayout();
 		
 		this.nameField = new JTextField("Enter Name Here");
-		this.Background = new JTextField("");
-		this.str = new JTextField("");
-		this.dex = new JTextField("");
-		this.intel = new JTextField("");
-		this.wis = new JTextField("");
-		this.cha = new JTextField("");
-		this.con = new JTextField("");
-		this.alignment = new JTextField("");
-		this.maxhp = new JTextField("");
-		this.className = new JTextField("");
-		this.raceField = new JTextField("");
+		this.Background = new JTextField("Background name");
+		this.str = new JTextField("Strength");
+		this.dex = new JTextField("Dexterity");
+		this.intel = new JTextField("Intelligence");
+		this.wis = new JTextField("Wisdom");
+		this.cha = new JTextField("Charisma");
+		this.con = new JTextField("Constitution");
+		this.alignment = new JTextField("Alignment");
+		this.maxhp = new JTextField("MaxHP");
+		this.className = new JTextField("Class Name");
+		this.raceField = new JTextField("Race Name");
 		
 		this.add(nameField);
 		this.add(Background);

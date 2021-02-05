@@ -13,7 +13,8 @@ ALTER Procedure AddCharacter
 	@maxhp smallint,
 	@classId int,
 	@backgroundName dbo.backgroundName,
-	@raceName dbo.raceName
+	@raceName dbo.raceName,
+	@name varchar(25)
 AS
 BEGIN
 	IF(@str IS NOT NULL AND (@str < 3 OR @str > 20))
@@ -61,12 +62,20 @@ BEGIN
 		RAISERROR('Race must exist in the Race table.', 14, 9);
 		RETURN 9;
 	END
-
-	INSERT INTO Character([Str], Dex, [Int], Wis, Cha, Alignment, HP, MaxHP, Background, Race)
-	VALUES(@str, @dex, @intel, @wis, @cha, @alignment, @hp, @maxhp, @backgroundName, @raceName);
+	IF(@name IS NULL)
+	BEGIN
+		RAISERROR('Name must not be null', 14, 10)
+		RETURN 10;
+	END
 
 	DECLARE @newid int;
-	SET @newid = SCOPE_IDENTITY();
+	SET @newid = (SELECT MAX(CharacterID) FROM [Character]) + 1;
+
+	INSERT INTO Character(CharacterID, [Str], Dex, [Int], Wis, Cha, Alignment, HP, MaxHP, Con, Background, Race, [Name])
+	VALUES(@newid, @str, @dex, @intel, @wis, @cha, @alignment, @hp, @maxhp, @con, @backgroundName, @raceName, @name);
+
+--	DECLARE @newid int;
+--	SET @newid = SCOPE_IDENTITY();
 
 	INSERT INTO Has_Levels_In(CharacterID, ClassID, NumLevels)
 	VALUES(@newid, @classId, 1);
