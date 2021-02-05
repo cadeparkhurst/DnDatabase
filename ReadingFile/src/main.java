@@ -34,11 +34,13 @@ public class main {
 		user = sc.nextLine();            
 		System.out.print("Enter your Password: "); 
 		pass = sc.nextLine();
+		
+		
 		SampleURL =SampleURL.replace("${dbServer}",serverName)
 				 .replace("${dbName}",databaseName)
 				 .replace("${user}", user)
 				 .replace("${pass}", pass);
-		System.out.println(SampleURL);
+		//System.out.println(SampleURL);
 		try {
 			connection = DriverManager.getConnection(SampleURL);
 			//insertItems();
@@ -49,18 +51,18 @@ public class main {
 			//insertWeapons();
 			//insertSkills();
 			//insertSavingThrows();
-			
-			try {
-				Statement st  = connection.createStatement();
-				ResultSet rs = st.executeQuery("SELECT * FROM Item");
-				
-				while(rs.next()) {
-					System.out.println(rs.getString("ItemID"));
-				}
-				
-			}catch(SQLException e) {
-				e.printStackTrace();
-			}
+			//insertStartsWith();
+			//insertClass();
+			//insertLanguages();
+			//insertLangFromRace();
+			//insertSubclasses();
+			//insertRaceWeaponProf();
+			//insertOffersSkill();
+			//insertWeaponProf();
+			//insertWeaponTypeProf();
+			//insertSavingThrowProf();
+			//insertArmorWeightProf();
+			insertCanLearnSpell();
 			
 			//insertBackgrounds();
 		}catch(SQLException e) {
@@ -70,6 +72,359 @@ public class main {
 
 		System.out.println("TASK COMPLETED");
 	}
+	
+	public static void insertCanLearnSpell() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		ArrayList<ArrayList<String>> spells = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/CanLearn.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			BufferedReader br1 = new BufferedReader(new FileReader("data/Spells.csv"));
+			while((line = br1.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				spells.add(temp);
+			}
+			
+			for(int i =0;i<s.size();i++) {
+				Boolean found = false;
+				for(ArrayList<String> spell : spells) {
+					if(s.get(i).get(1).toLowerCase().equals(spell.get(1).toLowerCase())) {
+						s.get(i).set(1, spell.get(0));
+						found = true;
+					}
+				}
+				if(!found) {
+					s.remove(i);
+					i--;
+				}
+			}
+			
+			
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [CanLearnSpell] (ClassID, SpellID) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setInt(2, Integer.valueOf(row.get(1)));
+				
+				p.execute();	
+			}
+			br.close();
+			br1.close();
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertArmorWeightProf() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/ArmorWeightProfs.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [HasArmorWeightProf] (ClassID, ArmorWeightName) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setString(2, row.get(1));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertSavingThrowProf() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/SavingThrowProfs.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [HasSavingThrowProf] (ClassID, SavingThrowName) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setString(2, row.get(1));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertWeaponTypeProf() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/WeaponTypeProfs.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [HasWeaponTypeProf] (ClassID, WeaponTypeName) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setString(2, row.get(1));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertWeaponProf() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/ClassWeaponProf.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [HasWeaponProf] (ClassID, WeaponID) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setInt(2, Integer.valueOf(row.get(1)));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertOffersSkill() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/OffersSkill.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [OffersSkillProficiency] (ClassID, SkillName) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setString(2, row.get(1));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertRaceWeaponProf() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/RaceWeaponProf.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [Race_Weapon_Prof] (RaceName, WeaponID) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+				p.setInt(2, Integer.valueOf(row.get(1)));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertSubclasses() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/SubClasses.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO Subclass (SubClassID, Name, ClassID) VALUES (?,?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setString(2, row.get(1));
+				p.setInt(3, Integer.valueOf(row.get(2)));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertLanguages() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/Languages.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO Language (Name) VALUES (?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+	
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertLangFromRace() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/LangFromRace.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO [Knows_Language_From_Race] (RaceName, LanguageName) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+				p.setString(2, row.get(1));
+				
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertClass() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/Class.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO Class (ClassID, Name, HitDice) VALUES (?,?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setString(2, row.get(1));
+				p.setInt(3, Integer.valueOf(row.get(2)));
+	
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertStartsWith() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/StartsWith.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO StartsWith (ClassID, ItemID, Quantity) VALUES (?,?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setInt(1, Integer.valueOf(row.get(0)));
+				p.setInt(2, Integer.valueOf(row.get(1)));
+				p.setInt(3, Integer.valueOf(row.get(2)));
+	
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
 	
 	public static void insertSavingThrows() {
 		ArrayList<ArrayList<String>> s = new ArrayList<>();
