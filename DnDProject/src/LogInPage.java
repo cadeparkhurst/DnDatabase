@@ -93,7 +93,7 @@ public class LogInPage extends JPanel{
 			}
 			
 		}catch(SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Login Failed");
 			return false;
 		}
 		return false;
