@@ -20,7 +20,7 @@ import javax.swing.JTextField;
 
 public class CharactersScreen extends JPanel{
 	private PageManager manager;
-	private ConnectionHelper loginHelper;
+	//private ConnectionHelper loginHelper;
 	private HashMap<String, String> characters;
 	private GridLayout layout;
 	private JTextField characterField;
@@ -31,22 +31,26 @@ public class CharactersScreen extends JPanel{
 		this.manager = manager;
 		this.characters = getCharacterNames();
 		int rows = this.characters.size() > 10? 10:this.characters.size();
-		this.characterField = new JTextField(20);
+		//this.characterField = new JTextField(20);
 		this.newCharButton = new JButton("New Character");
 		this.layout = new GridLayout(rows+2,3);
 		
 		newCharButton.addActionListener(new newCharButtonListener());
 		
 		this.setLayout(layout);
-		this.add(characterField).setLocation(2, 0);
+		//this.add(characterField).setLocation(2, 0);
 		this.add(newCharButton).setLocation(0, 0);
 		this.ButtonToName = generateButtons();
 		//hide();
 		
-		
-		
-
-		
+	}
+	
+	public void updateScreen() {
+		for(JButton b : ButtonToName.keySet()) {
+			this.remove(b);
+		}
+		this.characters = getCharacterNames();
+		this.ButtonToName = generateButtons();
 	}
 	
 	public HashMap<String, String> getCharacterNames(){

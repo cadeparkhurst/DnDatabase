@@ -8,12 +8,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -22,7 +24,7 @@ public class AddCharacterScreen extends JPanel{
 	private PageManager manager;
 	private GridLayout layout;
 	private JTextField nameField;
-	private JTextField Background;
+	private JTextField background;
 	private JTextField str;
 	private JTextField dex;
 	private JTextField intel;
@@ -40,7 +42,7 @@ public class AddCharacterScreen extends JPanel{
 		this.layout = new GridLayout();
 		
 		this.nameField = new JTextField("Enter Name Here");
-		this.Background = new JTextField("Background name");
+		this.background = new JTextField("Background name");
 		this.str = new JTextField("Strength");
 		this.dex = new JTextField("Dexterity");
 		this.intel = new JTextField("Intelligence");
@@ -53,7 +55,7 @@ public class AddCharacterScreen extends JPanel{
 		this.raceField = new JTextField("Race Name");
 		
 		this.add(nameField);
-		this.add(Background);
+		this.add(background);
 		this.add(str);
 		this.add(dex);
 		this.add(intel);
@@ -79,7 +81,42 @@ public class AddCharacterScreen extends JPanel{
 	class SubmitListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			manager.switchPage("character");
+			try {
+				CallableStatement cstmt = manager.getConnection().prepareCall("{? = call AddCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+					
+				cstmt.registerOutParameter(1, Types.INTEGER);
+				cstmt.setInt(2, Integer.valueOf(str.getText()));
+				cstmt.setInt(3, Integer.valueOf(dex.getText()));
+				cstmt.setInt(4, Integer.valueOf(intel.getText()));
+				cstmt.setInt(5, Integer.valueOf(wis.getText()));
+				cstmt.setInt(6, Integer.valueOf(cha.getText()));
+				cstmt.setInt(7, Integer.valueOf(con.getText()));
+				cstmt.setString(8, alignment.getText());
+				cstmt.setInt(9, Integer.valueOf(maxhp.getText()));
+				cstmt.setInt(10, Integer.valueOf(maxhp.getText()));
+				//FIND CLASS  ID
+					CallableStatement cs1 = manager.getConnection().prepareCall("{? = call getClassID(?)}");
+					cs1.registerOutParameter(1, Types.INTEGER);
+					cs1.setString(2, className.getText());
+					ResultSet rs = cs1.executeQuery();
+					rs.next();			
+				cstmt.setInt(11, rs.getInt("ClassID"));
+				
+				cstmt.setString(12, background.getText());
+				cstmt.setString(13, raceField.getText());
+				cstmt.setString(14, nameField.getText());
+					
+				cstmt.execute();
+					
+				int retval = cstmt.getInt(1);
+				if(retval==0) {
+					manager.switchPage("character");
+				}else {
+					JOptionPane.showMessageDialog(null, "There was an error adding your character, with error code: "+retval);
+				}
+			}catch (SQLException exception) {
+				exception.printStackTrace();
+			}
 		}	
 	}
 	
