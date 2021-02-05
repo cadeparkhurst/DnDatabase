@@ -35,6 +35,8 @@ public class CharactersScreen extends JPanel{
 		this.newCharButton = new JButton("New Character");
 		this.layout = new GridLayout(rows+2,3);
 		
+		newCharButton.addActionListener(new newCharButtonListener());
+		
 		this.setLayout(layout);
 		this.add(characterField).setLocation(2, 0);
 		this.add(newCharButton).setLocation(0, 0);
@@ -95,6 +97,13 @@ public class CharactersScreen extends JPanel{
 			System.out.println("CHAR CHOSEN:" + manager.getCharacterChosen());
 			
 			manager.switchPage("Details");
+		}	
+	}
+	
+	class newCharButtonListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			manager.switchPage("AddCharacter");
 		}	
 	}
 	

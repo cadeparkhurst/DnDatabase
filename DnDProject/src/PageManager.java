@@ -11,6 +11,7 @@ public class PageManager{
 	private CharacterDetails detailsPage;
 	private Connection connection;
 	private CharactersScreen characterScreen;
+	private AddCharacterScreen addCharacterScreen;
 	private String characterChosen;
 	
 	public PageManager(JFrame frame, JPanel panel) {
@@ -21,6 +22,7 @@ public class PageManager{
 		this.loginPage = new LogInPage(this, loginHelper);
 		this.characterScreen = new CharactersScreen(this);
 		this.detailsPage = new CharacterDetails(this);
+		this.addCharacterScreen  = new AddCharacterScreen(this);
 		//this.setCharacterChosen("");
 		
 		
@@ -29,6 +31,7 @@ public class PageManager{
 		this.getPanel().add(this.loginPage);
 		this.getPanel().add(this.characterScreen);
 		this.getPanel().add(this.detailsPage);
+		this.getPanel().add(this.addCharacterScreen);
 		
 		this.switchPage("login");
 		//System.out.println(this.loginPage.isEnabled());
@@ -39,6 +42,7 @@ public class PageManager{
 		this.characterScreen.setVisible(false);
 		this.loginPage.setVisible(false);
 		this.detailsPage.setVisible(false);
+		this.addCharacterScreen.setVisible(false);
 		
 		switch(name) {
 		case "character": this.characterScreen.setVisible(true);; break;
@@ -46,6 +50,7 @@ public class PageManager{
 		case "Details": this.detailsPage.setVisible(true);
 						this.detailsPage.updateForCurrentCharacter();
 						break; 
+		case "AddCharacter": this.addCharacterScreen.setVisible(true);
 		default: break;
 		}
 		

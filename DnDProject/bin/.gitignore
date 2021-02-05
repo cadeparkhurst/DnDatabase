@@ -10,3 +10,9 @@
 /ConnectionHelper.class
 /CharactersScreen$CharButtonListener.class
 /CharacterDetails.class
+/AddCharacter.class
+/AddCharacterScreen$CharButtonListener.class
+/AddCharacterScreen.class
+/CharacterDetails$BackButtonListener.class
+/CharacterDetails$backListener.class
+/CharactersScreen$newCharButtonListener.class
