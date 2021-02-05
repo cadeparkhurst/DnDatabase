@@ -103,6 +103,7 @@ public class CharactersScreen extends JPanel{
 	class newCharButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			System.out.println("Switch to new char action listen");
 			manager.switchPage("AddCharacter");
 		}	
 	}

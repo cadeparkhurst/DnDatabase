@@ -20,81 +20,66 @@ import javax.swing.JTextField;
 
 public class AddCharacterScreen extends JPanel{
 	private PageManager manager;
-	private ConnectionHelper loginHelper;
-	private HashMap<String, String> characters;
 	private GridLayout layout;
-	private JTextField characterField;
-	private JButton newCharButton;
-	private HashMap<JButton,String> ButtonToName;
+	private JTextField nameField;
+	private JTextField Background;
+	private JTextField str;
+	private JTextField dex;
+	private JTextField intel;
+	private JTextField wis;
+	private JTextField cha;
+	private JTextField con;
+	private JTextField alignment;
+	private JTextField maxhp;
+	private JTextField className;
+	private JTextField raceField;
+	private JButton submit;
 	
 	public AddCharacterScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
-		this.characters = getCharacterNames();
-		int rows = this.characters.size() > 10? 10:this.characters.size();
-		this.characterField = new JTextField(20);
-		this.newCharButton = new JButton("New Character");
-		this.layout = new GridLayout(rows+2,3);
-		
-		this.setLayout(layout);
-		this.add(characterField).setLocation(2, 0);
-		this.add(newCharButton).setLocation(0, 0);
-		this.ButtonToName = generateButtons();
-		//hide();
-		
-		
-		
 
 		
-	}
-	
-	public HashMap<String, String> getCharacterNames(){
-		try {
-			HashMap<String, String> names = new HashMap<String, String>();
-			//System.out.println(this.manager.getConnection());
-			CallableStatement cstmt = this.manager.getConnection().prepareCall("{call GetCharNames}");
-			
-			ResultSet rs = cstmt.executeQuery();
-			//System.out.println(rs);
-			
-			while (rs.next()) {
-				names.put(rs.getString(1), rs.getString(2));
-			}
-			//System.out.println(names);
-			return names;
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	
-	private HashMap<JButton, String> generateButtons() {
-		HashMap<JButton,String> buttons = new HashMap<>();
+		this.nameField = new JTextField("Enter Name Here");
+		this.Background = new JTextField("");
+		this.str = new JTextField("");
+		this.dex = new JTextField("");
+		this.intel = new JTextField("");
+		this.wis = new JTextField("");
+		this.cha = new JTextField("");
+		this.con = new JTextField("");
+		this.alignment = new JTextField("");
+		this.maxhp = new JTextField("");
+		this.className = new JTextField("");
+		this.raceField = new JTextField("");
 		
-		int index = 1;
-		for(String name: characters.keySet()) {
-			JButton button;
-			button = new JButton();
-			button.setText(name);
-			this.add(button).setLocation(2, index);
-			button.addActionListener(new CharButtonListener());
-			buttons.put(button, name);
-			index++;
-		}
-		return buttons;
+		this.add(nameField);
+		this.add(Background);
+		this.add(str);
+		this.add(dex);
+		this.add(intel);
+		this.add(wis);
+		this.add(cha);
+		this.add(con);
+		this.add(alignment);
+		this.add(maxhp);
+		this.add(className);
+		this.add(raceField);
+		
+		submit = new JButton("Submit Character");
+		submit.addActionListener(new SubmitListener());
+		this.add(submit);
+		this.setLayout(layout);
+		this.setEnabled(false);
 	}
 	
-	class CharButtonListener implements ActionListener {
+	
+	
+	
+
+	class SubmitListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			manager.setCharacterChosen(characters.get(ButtonToName.get(e.getSource())));
-			//manager.setCharacterScreen(new CharactersScreen(manager));
-			
-		//	manager.getPanel().add(manager.getCharacterScreen());
-			System.out.println("CHAR CHOSEN:" + manager.getCharacterChosen());
-			
-			manager.switchPage("Details");
+			manager.switchPage("character");
 		}	
 	}
 	

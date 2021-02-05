@@ -22,7 +22,7 @@ public class PageManager{
 		this.loginPage = new LogInPage(this, loginHelper);
 		this.characterScreen = new CharactersScreen(this);
 		this.detailsPage = new CharacterDetails(this);
-		this.addCharacterScreen  = new AddCharacterScreen(this);
+		this.addCharacterScreen = new AddCharacterScreen(this);
 		//this.setCharacterChosen("");
 		
 		
@@ -50,7 +50,7 @@ public class PageManager{
 		case "Details": this.detailsPage.setVisible(true);
 						this.detailsPage.updateForCurrentCharacter();
 						break; 
-		case "AddCharacter": this.addCharacterScreen.setVisible(true);
+		case "AddCharacter": this.addCharacterScreen.setVisible(true); break;
 		default: break;
 		}
 		
