@@ -36,6 +36,7 @@ public class CharacterDetails extends JPanel{
 	private JLabel Str;
 	private JLabel level;
 	private JButton backButton;
+	private JButton itemButton;
 	private String characterID;
 	private HashMap<String,String> currentCharDetails;
 	
@@ -53,7 +54,9 @@ public class CharacterDetails extends JPanel{
 		//this.setLayout(layout);
 		placeLabels();
 		this.setEnabled(false);
-		
+		this.itemButton = new JButton("To Items");
+		itemButton.addActionListener(new toItemsListener());
+		this.add(itemButton, BorderLayout.PAGE_START);
 	}
 	public void placeLabels() {
 		this.add(name);
@@ -157,6 +160,13 @@ public class CharacterDetails extends JPanel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			manager.switchPage("character");
+		}	
+	}
+	
+	class toItemsListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			manager.switchPage("Items");
 		}	
 	}
 }
