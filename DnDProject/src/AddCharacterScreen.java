@@ -36,6 +36,7 @@ public class AddCharacterScreen extends JPanel{
 	private JTextField className;
 	private JTextField raceField;
 	private JButton submit;
+	private JButton backButton;
 	
 	public AddCharacterScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
@@ -70,6 +71,12 @@ public class AddCharacterScreen extends JPanel{
 		submit = new JButton("Submit Character");
 		submit.addActionListener(new SubmitListener());
 		this.add(submit);
+		
+		this.backButton = new JButton("Back To Characters");
+		backButton.addActionListener(new backListener());
+		this.add(backButton);
+		
+		
 		this.setLayout(layout);
 		this.setEnabled(false);
 	}
@@ -121,7 +128,12 @@ public class AddCharacterScreen extends JPanel{
 	}
 	
 	
-	
+	class backListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			manager.switchPage("character");
+		}	
+	}
 	
 	public void toggleState() {
 		setEnabled(!isEnabled());
