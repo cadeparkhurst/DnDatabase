@@ -34,6 +34,7 @@ public class CharacterDetails extends JPanel{
 	private JLabel Con;
 	private JLabel Cha;
 	private JLabel Str;
+	private JLabel level;
 	private JButton backButton;
 	private String characterID;
 	private HashMap<String,String> currentCharDetails;
@@ -50,10 +51,7 @@ public class CharacterDetails extends JPanel{
 		
 		//this.layout = new GridLayout(7,4);
 		//this.setLayout(layout);
-
 		placeLabels();
-		
-		
 		this.setEnabled(false);
 		
 	}
@@ -70,10 +68,11 @@ public class CharacterDetails extends JPanel{
 		this.add(Int);
 		this.add(Wis);
 		this.add(Cha);
+		this.add(level);
 	}
 	
 	public void initJLabels() {
-		Border border = BorderFactory.createLineBorder(Color.BLACK, 2);
+		Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
 		this.name = new JLabel();
 		this.race = new JLabel();
 		this.background = new JLabel();
@@ -86,6 +85,7 @@ public class CharacterDetails extends JPanel{
 		this.Con = new JLabel();
 		this.Cha = new JLabel();
 		this.Str = new JLabel();
+		this.level = new JLabel();
 		name.setBorder(border);
 		race.setBorder(border);
 		background.setBorder(border);
@@ -98,12 +98,15 @@ public class CharacterDetails extends JPanel{
 		Con.setBorder(border);
 		Cha.setBorder(border);
 		Str.setBorder(border);
+		level.setBorder(border);
 	}
 	
 	public void updateForCurrentCharacter() {
 		this.characterID = manager.getCharacterChosen();
+		System.out.println("Current details: "+ characterID);
 		this.currentCharDetails = this.getDetails();
 		this.name.setText("Name: "+currentCharDetails.get("Name"));
+		System.out.println(this.name.getText());
 		this.race.setText("Race: "+ currentCharDetails.get("Race"));
 		this.background.setText("Background: "+currentCharDetails.get("Background"));
 		this.alignment.setText("Alignment: "+ currentCharDetails.get("Alignment"));
@@ -115,6 +118,7 @@ public class CharacterDetails extends JPanel{
 		this.Con.setText("Con: "+currentCharDetails.get("Con"));
 		this.Cha.setText("Cha: "+currentCharDetails.get("Cha"));
 		this.Str.setText("Str: "+currentCharDetails.get("Str"));
+		this.level.setText("Level: "+ currentCharDetails.get("Level"));
 	}
 	
 	
@@ -125,7 +129,7 @@ public class CharacterDetails extends JPanel{
 		try {
 			CallableStatement cstmt = this.manager.getConnection().prepareCall("{? = call getCharacterInfo(?)}");
 			cstmt.registerOutParameter(1, Types.INTEGER);
-			cstmt.setString(2, this.characterID);
+			cstmt.setInt(2, Integer.valueOf(this.characterID));
 			
 			ResultSet rs = cstmt.executeQuery();
 			rs.next();
@@ -141,6 +145,7 @@ public class CharacterDetails extends JPanel{
 			stats.put("Cha", rs.getString("Cha"));
 			stats.put("Con", rs.getString("Con"));
 			stats.put("Str",rs.getString("Str"));
+			stats.put("Level", rs.getString("Level"));
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}

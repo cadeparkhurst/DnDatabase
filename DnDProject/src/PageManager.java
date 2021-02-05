@@ -53,8 +53,8 @@ public class PageManager{
 						  this.characterScreen.setVisible(true);
 						  break;
 		case "login": this.loginPage.setVisible(true); break;
-		case "Details": this.detailsPage.setVisible(true);
-						this.detailsPage.updateForCurrentCharacter();
+		case "Details": this.detailsPage.updateForCurrentCharacter();
+						this.detailsPage.setVisible(true);
 						break; 
 		case "AddCharacter": this.addCharacterScreen.setVisible(true); break;
 		//case "Items": this.itemScreen.setVisible(true); break;
