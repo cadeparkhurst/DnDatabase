@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -92,30 +93,129 @@ public class AddCharacterScreen extends JPanel{
 				CallableStatement cstmt = manager.getConnection().prepareCall("{? = call AddCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 					
 				cstmt.registerOutParameter(1, Types.INTEGER);
-				cstmt.setInt(2, Integer.valueOf(str.getText()));
-				cstmt.setInt(3, Integer.valueOf(dex.getText()));
-				cstmt.setInt(4, Integer.valueOf(intel.getText()));
-				cstmt.setInt(5, Integer.valueOf(wis.getText()));
-				cstmt.setInt(6, Integer.valueOf(cha.getText()));
-				cstmt.setInt(7, Integer.valueOf(con.getText()));
-				cstmt.setString(8, alignment.getText());
-				cstmt.setInt(9, Integer.valueOf(maxhp.getText()));
-				cstmt.setInt(10, Integer.valueOf(maxhp.getText()));
+				try {
+					int t = Integer.valueOf(str.getText());
+					if(t>18 || t<3) {
+						JOptionPane.showMessageDialog(null, "Strength value not between 18 and 3, it is: "+t);
+						return;
+					}else {
+						cstmt.setInt(2, t);
+					}
+				}catch(NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Incorrect value in Strength field, not an int.");
+					return;
+				}
+				try {
+					int t = Integer.valueOf(dex.getText());
+					if(t>18 || t<3) {
+						JOptionPane.showMessageDialog(null, "Dexterity value not between 18 and 3, it is: "+t);
+						return;
+					}else {
+						cstmt.setInt(3, t);
+					}
+				}catch(NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Incorrect value in Dexterity field, not an int.");
+					return;
+				}
+				try {
+					int t = Integer.valueOf(intel.getText());
+					if(t>18 || t<3) {
+						JOptionPane.showMessageDialog(null, "Intelligence value not between 18 and 3, it is: "+t);
+						return;
+					}else {
+						cstmt.setInt(4, t);
+					}
+				}catch(NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Incorrect value in Intelligence field, not an int.");
+					return;
+				}
+				try {
+					int t = Integer.valueOf(wis.getText());
+					if(t>18 || t<3) {
+						JOptionPane.showMessageDialog(null, "Wisdom value not between 18 and 3, it is: "+t);
+						return;
+					}else {
+						cstmt.setInt(5, t);
+					}
+				}catch(NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Incorrect value in Wisdom field, not an int.");
+					return;
+				}
+				try {
+					int t = Integer.valueOf(cha.getText());
+					if(t>18 || t<3) {
+						JOptionPane.showMessageDialog(null, "Charisma value not between 18 and 3, it is: "+t);
+						return;
+					}else {
+						cstmt.setInt(6, t);
+					}
+				}catch(NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Incorrect value in Charisma field, not an int.");
+					return;
+				}
+				try {
+					int t = Integer.valueOf(con.getText());
+					if(t>18 || t<3) {
+						JOptionPane.showMessageDialog(null, "Constitution value not between 18 and 3, it is: "+t);
+						return;
+					}else {
+						cstmt.setInt(7, t);
+					}
+				}catch(NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Incorrect value in Constitution field, not an int.");
+					return;
+				}
+				//ADD CHECKS FOR ALIGNMENT
+				String ali = alignment.getText();
+				cstmt.setString(8, ali);
+				
+				try {
+					int t = Integer.valueOf(maxhp.getText());
+					cstmt.setInt(9, t);
+					cstmt.setInt(10, t);
+				}catch(NumberFormatException ex) {
+					JOptionPane.showMessageDialog(null, "Incorrect value in MaxHP field, not an int.");
+					return;
+				}
+				
 				//FIND CLASS  ID
 					CallableStatement cs1 = manager.getConnection().prepareCall("{? = call getClassID(?)}");
 					cs1.registerOutParameter(1, Types.INTEGER);
+					String[] classes = {"Barbarian", 
+							"Bard", 
+							"Cleric", 
+							"Druid", 
+							"Fighter", 
+							"Monk", 
+							"Paladin", 
+							"Ranger", 
+							"Rogue", 
+							"Sorcerer", 
+							"Warlock", 
+							"Wizard"};
+					if(!(Arrays.asList(classes).contains(className.getText()))) {
+						JOptionPane.showMessageDialog(null, "Incorrect Class Name");
+						return;
+					}
 					cs1.setString(2, className.getText());
 					ResultSet rs = cs1.executeQuery();
 					rs.next();			
-				cstmt.setInt(11, rs.getInt("ClassID"));
-				
+					int retval = cstmt.getInt(1);
+					if(retval==0) {
+						cstmt.setInt(11, rs.getInt("ClassID"));
+					}else {
+						JOptionPane.showMessageDialog(null, "Invalid Class Name");
+						return;
+					}
+
+				//Need to check these
 				cstmt.setString(12, background.getText());
 				cstmt.setString(13, raceField.getText());
 				cstmt.setString(14, nameField.getText());
 					
 				cstmt.execute();
 					
-				int retval = cstmt.getInt(1);
+				retval = cstmt.getInt(1);
 				if(retval==0) {
 					manager.switchPage("character");
 				}else {
