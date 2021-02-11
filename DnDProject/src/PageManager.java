@@ -13,7 +13,10 @@ public class PageManager{
 	private CharactersScreen characterScreen;
 	private AddCharacterScreen addCharacterScreen;
 	private ItemScreen itemScreen;
+	private SpellScreen spellScreen;
+	private LanguageScreen languageScreen;
 	private String characterChosen;
+	
 	
 	public PageManager(JFrame frame, JPanel panel) {
 		this.setPanel(panel);
@@ -25,6 +28,9 @@ public class PageManager{
 		this.detailsPage = new CharacterDetails(this);
 		this.addCharacterScreen = new AddCharacterScreen(this);
 		this.itemScreen = new ItemScreen(this);
+		this.spellScreen = new SpellScreen(this);
+		this.languageScreen = new LanguageScreen(this);
+		
 		this.setCharacterChosen("");
 		
 		
@@ -35,6 +41,8 @@ public class PageManager{
 		this.getPanel().add(this.detailsPage);
 		this.getPanel().add(this.addCharacterScreen);
 		this.getPanel().add(this.itemScreen);
+		this.getPanel().add(this.spellScreen);
+		this.getPanel().add(this.languageScreen);
 		
 		this.switchPage("login");
 		System.out.println(this.loginPage.isEnabled());
@@ -47,6 +55,8 @@ public class PageManager{
 		this.detailsPage.setVisible(false);
 		this.addCharacterScreen.setVisible(false);
 		this.itemScreen.setVisible(false);
+		this.spellScreen.setVisible(false);
+		this.languageScreen.setVisible(false);
 		
 		switch(name) {
 		case "character": this.characterScreen.updateScreen();
@@ -58,6 +68,8 @@ public class PageManager{
 						break; 
 		case "AddCharacter": this.addCharacterScreen.setVisible(true); break;
 		case "Items": this.itemScreen.updateForCharacter(); this.itemScreen.setVisible(true);  break;
+		case "Spells": this.spellScreen.updateForCharacter(); this.spellScreen.setVisible(true);  break;
+		case "Lang": this.languageScreen.updateForCharacter(); this.languageScreen.setVisible(true);  break;
 		default: break;
 		}
 		

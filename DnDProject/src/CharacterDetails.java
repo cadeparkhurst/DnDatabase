@@ -37,6 +37,8 @@ public class CharacterDetails extends JPanel{
 	private JLabel level;
 	private JButton backButton;
 	private JButton itemButton;
+	private JButton spellButton;
+	private JButton langButton;
 	private String characterID;
 	private HashMap<String,String> currentCharDetails;
 	
@@ -57,6 +59,14 @@ public class CharacterDetails extends JPanel{
 		this.itemButton = new JButton("To Items");
 		itemButton.addActionListener(new toItemsListener());
 		this.add(itemButton, BorderLayout.PAGE_START);
+		
+		this.spellButton = new JButton("To Spells");
+		spellButton.addActionListener(new toSpellsListener());
+		this.add(spellButton, BorderLayout.PAGE_START);
+		
+		this.langButton = new JButton("To Languages");
+		langButton.addActionListener(new toLangListener());
+		this.add(langButton, BorderLayout.PAGE_START);
 	}
 	public void placeLabels() {
 		this.add(name);
@@ -167,6 +177,20 @@ public class CharacterDetails extends JPanel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			manager.switchPage("Items");
+		}	
+	}
+	
+	class toSpellsListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			manager.switchPage("Spells");
+		}	
+	}
+	
+	class toLangListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			manager.switchPage("Lang");
 		}	
 	}
 }
