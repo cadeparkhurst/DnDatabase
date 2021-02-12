@@ -17,8 +17,10 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -35,6 +37,7 @@ public class SpellScreen extends JPanel{
 	private JTable spellTable;
 	private String characterID;
 	private JButton backButton;
+	private JTextField spellName;
 	
 	public SpellScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
@@ -43,7 +46,11 @@ public class SpellScreen extends JPanel{
 		
 		this.characterID = "1";
 		
+		this.spellName = new JTextField();
+		this.add(spellName);
+		
 		newSpellButton.addActionListener(new newSpellButtonListener());
+		this.add(newSpellButton);
 		this.backButton = new JButton("Back To Stats");
 		backButton.addActionListener(new backListener());
 		this.add(backButton);
@@ -69,9 +76,8 @@ public class SpellScreen extends JPanel{
 		}
 		try {
 			this.spellTable = new JTable(buildTableModel(this.spells));
-			this.add(this.spellTable).setLocation(2, 2);;
+			this.add(new JScrollPane(this.spellTable)).setLocation(2, 2);;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -122,8 +128,38 @@ public class SpellScreen extends JPanel{
 	class newSpellButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Switch to new char action listen");
-			manager.switchPage("AddCharacter");
+			String spell = spellName.getText();
+			try {
+				CallableStatement cstmt2 = manager.getConnection().prepareCall("{? = call getSpellID(?)}");
+				cstmt2.registerOutParameter(1, Types.INTEGER);
+				cstmt2.setString(2, spell);
+				
+				ResultSet rs = cstmt2.executeQuery();
+				rs.next();
+				int spellID = rs.getInt("SpellID");
+				
+				CallableStatement cstmt = manager.getConnection().prepareCall("{? = call learnSpell(?,?)}");
+				cstmt.registerOutParameter(1, Types.INTEGER);
+				cstmt.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
+				cstmt.setInt(3, spellID);
+				
+				cstmt.execute();
+				
+				int retval = cstmt.getInt(1);
+				
+				if(retval==0) {
+					 updateForCharacter();
+					 manager.switchPage("Spells");
+				}else {
+					JOptionPane.showMessageDialog(null, "Learning Spell Failed");
+				}
+				
+				
+				
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			
 		}	
 	}
 	

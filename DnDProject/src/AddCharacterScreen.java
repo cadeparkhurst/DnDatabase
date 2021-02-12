@@ -90,6 +90,38 @@ public class AddCharacterScreen extends JPanel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			try {
+				int classid;
+				CallableStatement cs1 = manager.getConnection().prepareCall("{? = call getClassID(?)}");
+				cs1.registerOutParameter(1, Types.INTEGER);
+				String[] classes = {"Barbarian", 
+						"Bard", 
+						"Cleric", 
+						"Druid", 
+						"Fighter", 
+						"Monk", 
+						"Paladin", 
+						"Ranger", 
+						"Rogue", 
+						"Sorcerer", 
+						"Warlock", 
+						"Wizard"};
+				if(!(Arrays.asList(classes).contains(className.getText()))) {
+					JOptionPane.showMessageDialog(null, "Incorrect Class Name");
+					return;
+				}
+				cs1.setString(2, className.getText());
+				ResultSet rs = cs1.executeQuery();
+				rs.next();		
+				classid = rs.getInt("ClassID");
+				int retval = cs1.getInt(1);
+				if(retval!=0) {
+					JOptionPane.showMessageDialog(null, "Invalid Class Name");
+					return;
+				}
+				
+				
+				
+				
 				CallableStatement cstmt = manager.getConnection().prepareCall("{? = call AddCharacter(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
 					
 				cstmt.registerOutParameter(1, Types.INTEGER);
@@ -179,34 +211,7 @@ public class AddCharacterScreen extends JPanel{
 				}
 				
 				//FIND CLASS  ID
-					CallableStatement cs1 = manager.getConnection().prepareCall("{? = call getClassID(?)}");
-					cs1.registerOutParameter(1, Types.INTEGER);
-					String[] classes = {"Barbarian", 
-							"Bard", 
-							"Cleric", 
-							"Druid", 
-							"Fighter", 
-							"Monk", 
-							"Paladin", 
-							"Ranger", 
-							"Rogue", 
-							"Sorcerer", 
-							"Warlock", 
-							"Wizard"};
-					if(!(Arrays.asList(classes).contains(className.getText()))) {
-						JOptionPane.showMessageDialog(null, "Incorrect Class Name");
-						return;
-					}
-					cs1.setString(2, className.getText());
-					ResultSet rs = cs1.executeQuery();
-					rs.next();			
-					int retval = cstmt.getInt(1);
-					if(retval==0) {
-						cstmt.setInt(11, rs.getInt("ClassID"));
-					}else {
-						JOptionPane.showMessageDialog(null, "Invalid Class Name");
-						return;
-					}
+				cstmt.setInt(11, classid);	
 
 				//Need to check these
 				cstmt.setString(12, background.getText());
