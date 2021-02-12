@@ -11,3 +11,6 @@ BEGIN
 	FROM OffersSkillProficiency
 	WHERE ClassID = @classID
 END
+
+GRANT EXECUTE ON getOfferedProfs
+	TO [dndadabasefrontend]

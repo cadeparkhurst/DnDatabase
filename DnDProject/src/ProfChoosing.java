@@ -136,7 +136,7 @@ public class ProfChoosing extends JPanel{
 					
 					int retval = cstmt.getInt(1);
 					if(retval==0) {
-						manager.switchPage("character");
+						manager.switchPage("Language");
 					}else {
 						JOptionPane.showMessageDialog(null, "There was an error selecting profs, please try again");
 					}

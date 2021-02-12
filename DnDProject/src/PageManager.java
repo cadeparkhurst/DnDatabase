@@ -18,6 +18,7 @@ public class PageManager{
 	private TraitScreen traitScreen;
 	private String characterChosen;
 	private ProfChoosing profsScreen;
+	private LangChoosing langScreen;
 	
 	
 	public PageManager(JFrame frame, JPanel panel) {
@@ -34,6 +35,7 @@ public class PageManager{
 		this.languageScreen = new LanguageScreen(this);
 		this.profsScreen = new ProfChoosing(this);
 		this.traitScreen = new TraitScreen(this);
+		this.langScreen = new LangChoosing(this);
 		
 		
 		this.setCharacterChosen("");
@@ -50,6 +52,7 @@ public class PageManager{
 		this.getPanel().add(this.languageScreen);
 		this.getPanel().add(this.profsScreen);
 		this.getPanel().add(this.traitScreen);
+		this.getPanel().add(this.langScreen);
 		
 		this.switchPage("login");
 		System.out.println(this.loginPage.isEnabled());
@@ -66,6 +69,7 @@ public class PageManager{
 		this.languageScreen.setVisible(false);
 		this.profsScreen.setVisible(false);
 		this.traitScreen.setVisible(false);
+		this.langScreen.setVisible(false);
 		
 		switch(name) {
 		case "character": this.characterScreen.updateScreen();
@@ -81,6 +85,7 @@ public class PageManager{
 		case "Lang": this.languageScreen.updateForCharacter(); this.languageScreen.setVisible(true);  break;
 		case "Trait": this.traitScreen.updateForCharacter(); this.traitScreen.setVisible(true);  break;
 		case "Prof": this.profsScreen.setVisible(true); break;
+		case "Language": this.langScreen.updatePage(); this.langScreen.setVisible(true); break;
 		default: break;
 		}
 		
