@@ -65,7 +65,9 @@ public class main {
 			//insertCanLearnSpell();
 			//insertTraits();
 			//insertGivesClassFeature(); 
-			insertGivesRaceFeature();
+			//insertGivesRaceFeature();
+			//insertBackgrounds();
+			insertBackgroundSkillProf();
 			
 			//insertBackgrounds();
 		}catch(SQLException e) {
@@ -563,42 +565,6 @@ public class main {
 		}
 	}
 
-	public static void insertBackgrounds() {// NOT RUN YET
-		ArrayList<ArrayList<String>> s = new ArrayList<>();
-		try{
-			BufferedReader br = new BufferedReader(new FileReader("data/Races.csv"));
-			String line;
-			while((line = br.readLine())!=null) {
-				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
-				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
-				s.add(temp);
-			}
-			
-			
-
-			s.remove(0); // remove header row
-			for(ArrayList<String> row : s) {
-				String query = "INSERT INTO Race (Name, SubRace) VALUES (?,?)";
-				PreparedStatement p = connection.prepareStatement(query);
-
-				if(!row.get(0).equals("Human")) {
-					p.setString(1, row.get(0));
-					if(row.get(1).equals("NULL")) {
-						p.setNull(2, Types.NULL);
-					}else {
-						p.setString(2, row.get(1));
-					}
-	
-					p.execute();
-				}
-				
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("FAILURE");
-		}
-	}
-	
 	public static void insertArmors() {
 		ArrayList<ArrayList<String>> s = new ArrayList<>();
 		try{
@@ -791,6 +757,62 @@ public class main {
 			System.out.println("FAILURE");
 		}
 	}
+	
+	public static void insertBackgrounds() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/Backgrounds.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO Background (Name, Feature, NumLanguagesGained) VALUES (?,?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+				p.setString(2, row.get(1));
+				p.setString(3, row.get(2));
+	
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertBackgroundSkillProf() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/BackgroundSkillProf.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO Background_Skill_Prof (BackgroundName, SkillName) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+				p.setString(2, row.get(1));
+	
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+
 
 }
 

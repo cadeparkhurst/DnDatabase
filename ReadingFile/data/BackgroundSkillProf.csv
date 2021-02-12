@@ -1,0 +1,17 @@
+BackgroundName,SkillName
+Acolyte,Religion
+Acolyte,Insight
+Crafter,Athletics
+Crafter,Investigation
+Guard,Investigation
+Guard,Perception
+Hunter,Survival
+Hunter,Perception
+Sailor,Survival
+Sailor,Perception
+Scholar,Arcana
+Scholar,History
+Soldier,Intimidation
+Soldier,Athletics
+Traveler,Survival
+Traveler,Animal Handling
