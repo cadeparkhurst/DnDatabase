@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,25 +36,30 @@ public class SpellScreen extends JPanel{
 	private JTextField characterField;
 	private JButton newSpellButton;
 	private JTable spellTable;
+	private JScrollPane spellScrollTable;
 	private String characterID;
 	private JButton backButton;
+	private JPanel optionsPanel;
 	private JTextField spellName;
 	
 	public SpellScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
 		
 		this.newSpellButton = new JButton("New Spell");
-		
+		this.optionsPanel = new JPanel();
+		this.optionsPanel.setLayout(new GridLayout(0,3));
 		this.characterID = "1";
-		
+//		this.layout = new GridLayout(0,1);
+		this.setLayout(new BorderLayout());
 		this.spellName = new JTextField();
-		this.add(spellName);
+		this.optionsPanel.add(spellName);
 		
 		newSpellButton.addActionListener(new newSpellButtonListener());
-		this.add(newSpellButton);
+		this.optionsPanel.add(newSpellButton);
 		this.backButton = new JButton("Back To Stats");
 		backButton.addActionListener(new backListener());
-		this.add(backButton);
+		this.optionsPanel.add(backButton);
+		this.add(this.optionsPanel, BorderLayout.SOUTH);
 		
 //		this.add(characterField).setLocation(2, 0);
 //		this.add(newItemButton).setLocation(0, 0);
@@ -69,14 +75,18 @@ public class SpellScreen extends JPanel{
 		System.out.println(this.characterID);
 		this.spells = this.getSpellData();
 //		int rows = this.items.size() > 10? 10:this.items.size();
-		this.layout = new GridLayout(2,3);
-		this.setLayout(layout);
-		if (this.spellTable != null) {
-			this.remove(spellTable);
+		
+		if (this.spellScrollTable != null) {
+			this.remove(this.spellScrollTable);
 		}
 		try {
 			this.spellTable = new JTable(buildTableModel(this.spells));
-			this.add(new JScrollPane(this.spellTable)).setLocation(2, 2);;
+			
+			this.spellScrollTable = new JScrollPane(this.spellTable);
+			Dimension size = this.spellScrollTable.getPreferredSize();
+			size.setSize(size.width+1000, size.height);
+			this.spellScrollTable.setPreferredSize(size);
+			this.add(this.spellScrollTable,BorderLayout.NORTH);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

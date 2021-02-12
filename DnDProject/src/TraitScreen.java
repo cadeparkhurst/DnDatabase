@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,7 +64,10 @@ public class TraitScreen extends JPanel{
 		}
 		try {
 			this.traitTable = new JTable(buildTableModel(this.traits));
-			this.add(this.traitTable).setLocation(2, 2);;
+			Dimension size = this.traitTable.getPreferredSize();
+			size.setSize(size.width+700, size.height);
+			this.traitTable.setPreferredSize(size);
+			this.add(this.traitTable).setLocation(2, 2);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
