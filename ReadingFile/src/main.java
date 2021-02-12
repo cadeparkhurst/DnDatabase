@@ -64,7 +64,7 @@ public class main {
 			//insertArmorWeightProf();
 			//insertCanLearnSpell();
 			//insertTraits();
-			insertGivesClassFeature();
+			insertGivesClassFeature(); 
 			
 			//insertBackgrounds();
 		}catch(SQLException e) {
