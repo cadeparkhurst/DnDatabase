@@ -67,7 +67,8 @@ public class main {
 			//insertGivesClassFeature(); 
 			//insertGivesRaceFeature();
 			//insertBackgrounds();
-			insertBackgroundSkillProf();
+//			insertBackgroundSkillProf();
+			insertBackgroundToolProf();
 			
 			//insertBackgrounds();
 		}catch(SQLException e) {
@@ -800,6 +801,33 @@ public class main {
 			s.remove(0); // remove header row
 			for(ArrayList<String> row : s) {
 				String query = "INSERT INTO Background_Skill_Prof (BackgroundName, SkillName) VALUES (?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+				p.setString(2, row.get(1));
+	
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertBackgroundToolProf() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/BackgroundToolProf.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO Background_Tool_Prof (BackgroundName, ItemID) VALUES (?,?)";
 				PreparedStatement p = connection.prepareStatement(query);
 
 				p.setString(1, row.get(0));
