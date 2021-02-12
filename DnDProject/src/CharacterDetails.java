@@ -14,6 +14,7 @@ import java.util.HashMap;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -41,6 +42,7 @@ public class CharacterDetails extends JPanel{
 	private JButton langButton;
 	private String characterID;
 	private HashMap<String,String> currentCharDetails;
+	private JButton deleteMe;
 	
 	
 	public CharacterDetails(PageManager manager) {
@@ -67,6 +69,42 @@ public class CharacterDetails extends JPanel{
 		this.langButton = new JButton("To Languages");
 		langButton.addActionListener(new toLangListener());
 		this.add(langButton, BorderLayout.PAGE_START);
+		
+		this.deleteMe = new JButton("DELETE THIS CHARACTER");
+		this.deleteMe.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				  int a=JOptionPane.showConfirmDialog(null, "Are you sure?", "Deleting your character forever", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);  
+				  if(a==JOptionPane.NO_OPTION) {
+					  return;
+				  }
+				  
+				
+				
+				
+				try {
+					CallableStatement cs = manager.getConnection().prepareCall("{? = call deleteCharacter(?)}");
+					cs.registerOutParameter(1, Types.INTEGER);
+					cs.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
+					
+					cs.execute();
+					int ret = cs.getInt(1);
+					if(ret==0) {
+						manager.switchPage("character");
+					}else {
+						JOptionPane.showMessageDialog(null, "Something Went Wrong Deleting Character, character does not exist.");
+						return;
+					}
+					
+				}catch(SQLException e) {
+					e.printStackTrace();
+				}
+				
+			}
+			
+		});
+		this.add(deleteMe);
 	}
 	public void placeLabels() {
 		this.add(name);

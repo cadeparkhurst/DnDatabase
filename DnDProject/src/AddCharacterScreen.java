@@ -218,11 +218,15 @@ public class AddCharacterScreen extends JPanel{
 				cstmt.setString(13, raceField.getText());
 				cstmt.setString(14, nameField.getText());
 					
-				cstmt.execute();
+				ResultSet rs2 = cstmt.executeQuery();
+				rs2.next();
+				manager.setCharacterChosen(String.valueOf(rs2.getInt("characterID")));
+				
 					
 				retval = cstmt.getInt(1);
 				if(retval==0) {
-					manager.switchPage("character");
+					manager.getProfPage().updatePage(classid);
+					manager.switchPage("Prof");
 				}else {
 					JOptionPane.showMessageDialog(null, "There was an error adding your character, with error code: "+retval);
 				}
