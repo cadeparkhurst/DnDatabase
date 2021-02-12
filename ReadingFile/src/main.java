@@ -62,7 +62,9 @@ public class main {
 			//insertWeaponTypeProf();
 			//insertSavingThrowProf();
 			//insertArmorWeightProf();
-			insertCanLearnSpell();
+			//insertCanLearnSpell();
+			//insertTraits();
+			insertGivesClassFeature();
 			
 			//insertBackgrounds();
 		}catch(SQLException e) {
@@ -698,6 +700,63 @@ public class main {
 
 				p.execute();
 				
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	
+	public static void insertTraits() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/Traits.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO Trait (TraitID, Name, Description) VALUES (?,?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+				p.setString(2, row.get(1));
+				p.setString(3, row.get(2));
+	
+				p.execute();	
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("FAILURE");
+		}
+	}
+	
+	public static void insertGivesClassFeature() {
+		ArrayList<ArrayList<String>> s = new ArrayList<>();
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("data/GivesClassFeature.csv"));
+			String line;
+			while((line = br.readLine())!=null) {
+				String[] values = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
+				ArrayList<String> temp = new ArrayList<String>(Arrays.asList(values));
+				s.add(temp);
+			}
+			
+			s.remove(0); // remove header row
+			for(ArrayList<String> row : s) {
+				String query = "INSERT INTO GivesClassFeature (ClassID, ClassFeatureID, GainedAtLevel) VALUES (?,?,?)";
+				PreparedStatement p = connection.prepareStatement(query);
+
+				p.setString(1, row.get(0));
+				p.setString(2, row.get(1));
+				p.setString(3, row.get(2));
+	
+				p.execute();	
 			}
 		}catch (Exception e) {
 			e.printStackTrace();

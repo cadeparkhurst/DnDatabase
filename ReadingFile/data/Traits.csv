@@ -1,0 +1,16 @@
+TraitID,Name,Description
+100,Spell Caster,Allows the casting of spells
+101,Extra Attack,Allows a second attack
+102,Evasion,Take half damage from dex saves
+103,Fighting Style,Pick a fighting style
+104,Ritual Casting,Allows casting of rituals
+105,Trance,You don't sleep, but are in an incapacitated state during long rest
+106,Shelter,Allows you to get free housing
+107,Crafting,Allows you to craft items
+108,Dual Wield,Allows you to wield two weapons at once
+109,Grapler,Gives advantage on grapling
+110,Sneak Attack,Extra damage on enemy that doesn't see you
+111,Action Surge,Take an extra action once per long rest
+112,Unarmored Defence,Your AC increases when not wearing any armor
+113,Divine Health,Immune to disease
+114,Arcane Recovery,Recover spell slots on long rest
