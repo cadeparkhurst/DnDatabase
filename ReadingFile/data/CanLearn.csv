@@ -1,0 +1,840 @@
+ClassID,SpellID
+1,Blade Ward
+1,Dancing Lights
+1,Friends
+1,Light
+1,Mage Hand
+1,Mending
+1,Message
+1,Minor Illusion
+1,Prestidigitation
+1,Vicious Mockery
+1,Animal Friendship
+1,Bane
+1,Charm Person
+1,Comprehend Languages
+1,Cure Wounds
+1,Detect Magic
+1,Disguise Self
+1,Dissonant Whispers
+1,Faerie Fire
+1,Feather Fall
+1,Healing Word
+1,Heroism
+1,Identify
+1,Illusory Script
+1,Longstrider
+1,Silent Image
+1,Sleep
+1,Speak with Animals
+1,Tasha's Hideous Laughter
+1,Thunderwave
+1,Unseen Servant
+1,Animal Messenger
+1,Blindness/Deafness
+1,Calm Emotions
+1,Cloud of Daggers
+1,Crown of Madness
+1,Detect Thoughts
+1,Enhance Ability
+1,Enthrall
+1,Heat Metal
+1,Hold Person
+1,Invisibility
+1,Knock
+1,Lesser Restoration
+1,Locate Animals or Plants
+1,Locate Object
+1,Magic Mouth
+1,Phantasmal Force
+1,See Invisibility
+1,Shatter
+1,Silence
+1,Suggestion
+1,Zone of Truth
+1,Bestow Curse
+1,Clairvoyance
+1,Dispel Magic
+1,Fear
+1,Feign Death
+1,Glyph of Warding
+1,Hypnotic Pattern
+1,Leomund's Tiny Hut
+1,Major Image
+1,Nondetection
+1,Plant Growth
+1,Sending
+1,Speak with Dead
+1,Speak with Plants
+1,Stinking Cloud
+1,Tongues
+1,Compulsion
+1,Confusion
+1,Dimension Door
+1,Freedom of Movement
+1,Greater Invisibility
+1,Hallucinatory Terrain
+1,Locate Creature
+1,Polymorph
+1,Animate Object
+1,Awaken
+1,Dominate Person
+1,Dream
+1,Geas
+1,Greater Restoration
+1,Hold Monster
+1,Legend Lore
+1,Mass Cure Wounds
+1,Mislead
+1,Modify Memory
+1,Planar Binding
+1,Raise Dead
+1,Scrying
+1,Seeming
+1,Teleportation Circle
+1,Eyebite
+1,Find the Path
+1,Guards and Wards
+1,Mass Suggestion
+1,Otto's Irresistible Dance
+1,Programmed Illusion
+1,True Seeing
+1,Etherealness
+1,Forcecage
+1,Mirage Arcane
+1,Mordenkainen's Magnificent Mansion
+1,Mordenkainen's Sword
+1,Project Image
+1,Regenerate
+1,Resurrection
+1,Symbol
+1,Teleport
+1,Dominate Monster
+1,Feeblemind
+1,Glibness
+1,Mind Blank
+1,Power Word Stun
+1,Foresight
+1,Power Word Heal
+1,Power Word Kill
+1,True Polymorph
+2,Guidance
+2,Light
+2,Mending
+2,Resistance
+2,Sacred Flame
+2,Spare the Dying
+2,Thaumaturgy
+2,Bane
+2,Bless
+2,Command
+2,Create or Destroy Water
+2,Cure Wounds
+2,Detect Evil and Good
+2,Detect Magic
+2,Detect Poison and Disease
+2,Guiding Bolt
+2,Healing Word
+2,Inflict Wounds
+2,Protection from Evil and Good
+2,Purify Food and Drink
+2,Sanctuary
+2,Shield of Faith
+2,Aid
+2,Augury
+2,Blindness/Deafness
+2,Calm Emotions
+2,Continual Flame
+2,Enhance Ability
+2,Find Traps
+2,Gentle Repose
+2,Hold Person
+2,Lesser Restoration
+2,Locate Object
+2,Prayer of Healing
+2,Protection from Poison
+2,Silence
+2,Spiritual Weapon
+2,Warding Bond
+2,Zone of Truth
+2,Animate Dead
+2,Beacon of Hope
+2,Bestow Curse
+2,Clairvoyance
+2,Create Food and Water
+2,Daylight
+2,Dispel Magic
+2,Feign Death
+2,Glyph of Warding
+2,Magic Circle
+2,Mass Healing Word
+2,Meld Into Stone
+2,Protection From Energy
+2,Remove Curse
+2,Revivify
+2,Sending
+2,Speak with Dead
+2,Spirit Guardians
+2,Tongues
+2,Water Walk
+2,Banishment
+2,Control Water
+2,Death Ward
+2,Divination
+2,Freedom of Movement
+2,Guardian of Faith
+2,Locate Creature
+2,Stone Shape
+2,Commune
+2,Contagion
+2,Dispel Evil and Good
+2,Flame Strike
+2,Geas
+2,Greater Restoration
+2,Hallow
+2,Insect Plauge
+2,Legend Lore
+2,Mass Cure Wounds
+2,Planar Binding
+2,Raise Dead
+2,Scrying
+2,Blade Barrier
+2,Create Undead
+2,Find the Path
+2,Forbiddance
+2,Harm
+2,Heal
+2,Heroes' Feast
+2,Planar Ally
+2,True Seeing
+2,Word of Recall
+2,Conjure Celestial
+2,Divine Word
+2,Etherealness
+2,Fire Storm
+2,Plane Shift
+2,Regenerate
+2,Resurrection
+2,Symbol
+2,Antimagic Field
+2,Control Weather
+2,Earthquake
+2,Holy Aura
+2,Astral Projection
+2,Gate
+2,Mass Heal
+2,True Ressurection
+3,Druidcraft
+3,Guidance
+3,Mending
+3,Poison Spray
+3,Produce Flame
+3,Resistance
+3,Shillelagh
+3,Thorn Whip
+3,Animal Friendship
+3,Charm Person
+3,Create or Destroy Water
+3,Cure Wounds
+3,Detect Magic
+3,Detect Poison and Disease
+3,Entangle
+3,Faerie Fire
+3,Fog Cloud
+3,Goodberry
+3,Healing Word
+3,Jump
+3,Longstrider
+3,Purify Food and Drink
+3,Speak with Animals
+3,Thunderwave
+3,Animal Messenger
+3,Barkskin
+3,Beast Sense
+3,Darkvision
+3,Enhance Ability
+3,Find Traps
+3,Flame Blade
+3,Flaming Sphere
+3,Gust of Wind
+3,Heat Metal
+3,Hold Person
+3,Lesser Restoration
+3,Locate Animal or Plants
+3,Locate Object
+3,Moonbeam
+3,Pass without Trace
+3,Protection from Poison
+3,Spike Growth
+3,Call Lightning
+3,Conjure Animals
+3,Daylight
+3,Dispel Magic
+3,Feign Death
+3,Meld Into Stone
+3,Plant Growth
+3,Protection From Energy
+3,Sleet Storm
+3,Speak with Plants
+3,Water Breathing
+3,Water Walk
+3,Wind Wall
+3,Blight
+3,Confusion
+3,Conjure Minor Elemental
+3,Conjure Woodland Beings
+3,Control Water
+3,Dominate Beast
+3,Freedom of Movement
+3,Giant Insect
+3,Grasping Vine
+3,Hallucinatory Terrain
+3,Ice Storm
+3,Locate Creature
+3,Polymorph
+3,Stone Shape
+3,Stoneskin
+3,Wall of Fire
+3,Antilife Shell
+3,Awaken
+3,Commune with Nature
+3,Conjure Elemental
+3,Contagion
+3,Geas
+3,Greater Restoration
+3,Insect Plauge
+3,Mass Cure Wounds
+3,Planar Binding
+3,Reincarnate
+3,Scrying
+3,Tree Stride
+3,Wall of Stone
+3,Conjure Fey
+3,Find the Path
+3,Heal
+3,Heroes' Feast
+3,Move Earth
+3,Sunbeam
+3,Transport Via Plants
+3,Wall of Thorns
+3,Wind Walk
+3,Fire Storm
+3,Mirage Arcane
+3,Plane Shift
+3,Regenerate
+3,Reverse Gravity
+3,Animal Shapes
+3,Antipathy/Sympathy
+3,Control Weather
+3,Earthquake
+3,Feeblemind
+3,Sunburst
+3,Tsunami
+3,Foresight
+3,Shapechange
+3,Storm of Vengeance
+3,True Ressurection
+6,Bless
+6,Command
+6,Compelled Duel
+6,Cure Wounds
+6,Detect Evil and Good
+6,Detect Magic
+6,Detect Poison and Disease
+6,Divine Favor
+6,Heroism
+6,Protection from Evil and Good
+6,Purify Food and Drink
+6,Searing Smite
+6,Shield of Faith
+6,Thunderous Smite
+6,Wrathful Smite
+6,Aid
+6,Branding Smite
+6,Find Steed
+6,Lesser Restoration
+6,Locate Object
+6,Magic Weapon
+6,Protection From Poison
+6,Zone of Truth
+6,Aura of Vitality
+6,Blinding Smite
+6,Create Food and Water
+6,Crusader's Mantle
+6,Daylight
+6,Dispel Magic
+6,Elemental Weapon
+6,Magic Circle
+6,Remove Curse
+6,Revivify
+6,Aura of Life
+6,Aura of Purity
+6,Banishment
+6,Death Ward
+6,Locate Creature
+6,Staggering Smite
+6,Banishing Smite
+6,Circle of Power
+6,Destructive Wave
+6,Dispel Evil and Good
+6,Geas
+6,Raise Dead
+7,Alarm
+7,Animal Friendship
+7,Cure Wounds
+7,Detect Magic
+7,Detect Poison and Disease
+7,Ensnaring Strike
+7,Fog Cloud
+7,Goodberry
+7,Hail of Thorns
+7,Hunter's Mark
+7,Jump
+7,Longstrider
+7,Speak with Animals
+7,Animal Messenger
+7,Barkskin
+7,Beast Sense
+7,Cordon of Arrows
+7,Darkvision
+7,Find Traps
+7,Lesser Restoration
+7,Locate Animal or Plants
+7,Locate Object
+7,Pass without Trace
+7,Protection From Poison
+7,Silence
+7,Spike Growth
+7,Conjure Animals
+7,Conjure Barrage
+7,Daylight
+7,Lightning Arrow
+7,Nondetection
+7,Plant Growth
+7,Protection From Energy
+7,Speak with Plants
+7,Water Breathing
+7,Water Walk
+7,Wind Wall
+7,Conjure Woodland Beings
+7,Freedom of Movement
+7,Grasping Vine
+7,Locate Creature
+7,Stoneskin
+7,Commune with Nature
+7,Conjure Volley
+7,Swift Quiver
+7,Tree Stride
+9,Acid Splash
+9,Blade Ward
+9,Chill Touch
+9,Dancing Lights
+9,Fire Bolt
+9,Friends
+9,Light
+9,Mage Hand
+9,Mending
+9,Message
+9,Minor Illusion
+9,Poison Spray
+9,Prestidigitation
+9,Ray of Frost
+9,Shocking Grasp
+9,Burning Hands
+9,Charm Person
+9,Chromatic Orb
+9,Color Spray
+9,Comprehend Languages
+9,Detect Magic
+9,Disguise Self
+9,Expeditious Retreat
+9,False Life
+9,Feather Fall
+9,Fog Cloud
+9,Jump
+9,Mage Armor
+9,Magic Missile
+9,Ray of Sickness
+9,Shield of Faith
+9,Silent Image
+9,Sleep
+9,Thunderwave
+9,Witch Bolt
+9,Alter Self
+9,Blindness/Deafness
+9,Blur
+9,Cloud of Daggers
+9,Crown of Madness
+9,Darkness
+9,Darkvision
+9,Detect Thoughts
+9,Enhance Ability
+9,Enlarge/Reduce
+9,Gust of Wind
+9,Hold Person
+9,Invisibility
+9,Knock
+9,Levitate
+9,Mirror Image
+9,Misty Step
+9,Phantasmal Force
+9,Scorching Ray
+9,See Invisibility
+9,Shatter
+9,Spider Climb
+9,Suggestion
+9,Web
+9,Blink
+9,Clairvoyance
+9,Counterspell
+9,Daylight
+9,Dispel Magic
+9,Fear
+9,Fireball
+9,Fly
+9,Gaseous Form
+9,Haste
+9,Hypnotic Pattern
+9,Lightning Bolt
+9,Major Image
+9,Protection From Energy
+9,Sleet Storm
+9,Slow
+9,Stinking Cloud
+9,Tongues
+9,Water Breathing
+9,Water Walk
+9,Banishment
+9,Blight
+9,Confusion
+9,Dimension Door
+9,Dominate Beast
+9,Greater Invisibility
+9,Ice Storm
+9,Polymorph
+9,Stoneskin
+9,Wall of Fire
+9,Animate Objects
+9,Cloudkill
+9,Cone of Cold
+9,Creation
+9,Dominate Person
+9,Hold Monster
+9,Insect Plague
+9,Seeming
+9,Telekinesis
+9,Teleportation Circle
+9,Wall of Stone
+9,Arcane Gate
+9,Chain Lightning
+9,Circle of Death
+9,Disintegrate
+9,Eyebite
+9,Globe of Invulnerability
+9,Mass Suggestion
+9,Move Earth
+9,Sunbeam
+9,True Seeing
+9,Delayed Blast Fireball
+9,Etherealness
+9,Finger of Death
+9,Fire Storm
+9,Plane Shift
+9,Prismatic Spray
+9,Reverse Gravity
+9,Teleport
+9,Dominate Monster
+9,Earthquake
+9,Incendiary Cloud
+9,Power Word Stun
+9,Sunburst
+9,Gate
+9,Meteor Swarm
+9,Power Word Kill
+9,Time Stop
+9,Wish
+10,Blade Ward
+10,Chill Touch
+10,Eldritch Blast
+10,Friends
+10,Mage Hand
+10,Minor Illusion
+10,Poison Spray
+10,Prestidigitation
+10,Armor of Agathys
+10,Arms of Hadar
+10,Charm Person
+10,Comprehend Languages
+10,Expeditious Retreat
+10,Hellish Rebuke
+10,Hex
+10,Illusory Script
+10,Protection from Evil and Good
+10,Unseen Servant
+10,Witch Bolt
+10,Cloud of Daggers
+10,Crown of Madness
+10,Darkness
+10,Enthrall
+10,Hold Person
+10,Invisibility
+10,Mirror Image
+10,Misty Step
+10,Ray of Enfeeblement
+10,Shatter
+10,Spider Climb
+10,Suggestion
+10,Counterspell
+10,Dispel Magic
+10,Fear
+10,Fly
+10,Gaseous Form
+10,Hunger of Hadar
+10,Hypnotic Pattern
+10,Magic Circle
+10,Major Image
+10,Remove Curse
+10,Tongues
+10,Vampiric Touch
+10,Banishment
+10,Blight
+10,Dimension Door
+10,Hallucinatory Terrain
+10,Contact Other Plane
+10,Dream
+10,Hold Monster
+10,Scrying
+10,Arcane Gate
+10,Circle of Death
+10,Conjure Fey
+10,Create Undead
+10,Eyebite
+10,Flesh to Stone
+10,Mass Suggestion
+10,True Seeing
+10,Etherealness
+10,Finger of Death
+10,Forcecage
+10,Plane Shift
+10,Demiplane
+10,Dominate Monster
+10,Feeblemind
+10,Glibness
+10,Power Word Stun
+10,Astral Projection
+10,Foresight
+10,Imprisonment
+10,Power Word Kill
+10,True Polymorph
+11,Acid Splash
+11,Blade Ward
+11,Chill Touch
+11,Dancing Lights
+11,Fire Bolt
+11,Friends
+11,Light
+11,Mage Hand
+11,Mending
+11,Message
+11,Minor Illusion
+11,Poison Spray
+11,Prestidigitation
+11,Ray of Frost
+11,Shocking Grasp
+11,Alarm
+11,Burning Hands
+11,Charm Person
+11,Chromatic Orb
+11,Color Spray
+11,Comprehend Languages
+11,Detect Magic
+11,Disguise Self
+11,Expeditious Retreat
+11,False Life
+11,Feather Fall
+11,Find Familiar
+11,Fog Cloud
+11,Grease
+11,Identify
+11,Illusory Script
+11,Jump
+11,Longstrider
+11,Mage Armor
+11,Magic Missile
+11,Protection from Evil and Good
+11,Ray of Sickness
+11,Shield
+11,Silent Image
+11,Sleep
+11,Tasha's Hideous Laughter
+11,Tenser's Floating Disk
+11,Thunderwave
+11,Unseen Servant
+11,Witch Bolt
+11,Alter Self
+11,Arcane Lock
+11,Blindness/Deafness
+11,Blue
+11,Cloud of Daggers
+11,Continual Flame
+11,Crown of Madness
+11,Darkness
+11,Darkvision
+11,Detect Thoughts
+11,Enlarge/Reduce
+11,Flaming Sphere
+11,Gentle Repose
+11,Gust of Wind
+11,Hold Person
+11,Invisibility
+11,Knock
+11,Levitate
+11,Locate Object
+11,Magic Mouth
+11,Magic Weapon
+11,Melf's Acid Arrow
+11,Mirror Image
+11,Misty Step
+11,Nystul's Magic Aura
+11,Phantasmal Force
+11,Ray of Enfeeblement
+11,Rope Trick
+11,Scorching Ray
+11,See Invisibility
+11,Shatter
+11,Spider Climb
+11,Suggestion
+11,Web
+11,Animate Dead
+11,Bestow Curse
+11,Blink
+11,Clairvoyance
+11,Counterspell
+11,Dispel Magic
+11,Fear
+11,Feign Death
+11,Fireball
+11,Fly
+11,Gaseous Form
+11,Glyph of Warding
+11,Haste
+11,Hypnotic Pattern
+11,Leomund's Tiny Hunt
+11,Lightning Bolt
+11,Magic Circle
+11,Major Image
+11,Nondetection
+11,Phantom Steed
+11,Protection From Energy
+11,Remove Curse
+11,Sending
+11,Sleet Storm
+11,Slow
+11,Stinking Cloud
+11,Tongues
+11,Vampiric Touch
+11,Water Breathing
+11,Arcane Eye
+11,Banishment
+11,Blight
+11,Confusion
+11,Conjure Minor Elementals
+11,Control Water
+11,Dimension Door
+11,Evard's Black Tentacles
+11,Fabricate
+11,Fire Shield
+11,Greater Invisibility
+11,Hallucinatory Terrain
+11,Ice Storm
+11,Leomund's Secret Chest
+11,Locate Creature
+11,Mordenkainen's Faithful Hound
+11,Mordenkainen's Private Sanctum
+11,Otiluke's Resilient Sphere
+11,Phantasmal Killer
+11,Polymorph
+11,Stone Shape
+11,Stoneskin
+11,Wall of Fire
+11,Animate Object
+11,Bigby's Hand
+11,Cloudkill
+11,Cone of Cold
+11,Conjure Elemental
+11,Contact Other Plane
+11,Creation
+11,Dominate Person
+11,Dream
+11,Geas
+11,Hold Monster
+11,Legend Lore
+11,Mislead
+11,Modify Memory
+11,Passwall
+11,Planar Binding
+11,Rary's Telepathic Bond
+11,Scrying
+11,Seeming
+11,Telekinesis
+11,Teleportation Circle
+11,Wall of Force
+11,Wall of Stone
+11,Arcane Gate
+11,Chain Lightning
+11,Circle of Death
+11,Contingency
+11,Create Undead
+11,Disintegrate
+11,Drawmij's Instant Summons
+11,Globe of Invulnerability
+11,Guards and Wards
+11,Magic Jar
+11,Mass Suggestion
+11,Move Earth
+11,Otiluke's Freezing Sphere
+11,Otto's Irresistible Dance
+11,Programmed Illusion
+11,Sunbeam
+11,True Seeing
+11,Wall of Ice
+11,Delayed Blast Fireball
+11,Etherealness
+11,Finger of Death
+11,Forcecage
+11,Mirage Arcane
+11,Mordenkainen's Magnificent Mansion
+11,Mordenkainen's Sword
+11,Plane Shift
+11,Prismatic Spray
+11,Project Image
+11,Reverse Gravity
+11,Sequester
+11,Simulacrum
+11,Symbol
+11,Teleport
+11,Antimagic Field
+11,Antipathy/Sympathy
+11,Clone
+11,Control Weather
+11,Demiplane
+11,Dominate Monster
+11,Feeblemind
+11,Incendiary Cloud
+11,Maze
+11,Mind Blank
+11,Power Word Stun
+11,Sunburst
+11,Telepathy
+11,Astral Projection
+11,Foresight
+11,Gate
+11,Imprisonment
+11,Meteor Swarm
+11,Power Word Kill
+11,Prismatic Wall
+11,Shapechange
+11,Time Stop
+11,True Polymorph
+11,Weird
+11,Wish

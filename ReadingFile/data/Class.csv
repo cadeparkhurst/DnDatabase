@@ -1,0 +1,13 @@
+ClassID,Name,HitDice,NumSkillProfs
+0,Barbarian,12,2
+1,Bard,8,3
+2,Cleric,8,2
+3,Druid,8,2
+4,Fighter,10,2
+5,Monk,8,2
+6,Paladin,10,2
+7,Ranger,10,3
+8,Rogue,8,4
+9,Sorcerer,6,2
+10,Warlock,8,2
+11,Wizard,6,2
