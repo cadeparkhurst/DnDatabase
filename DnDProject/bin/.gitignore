@@ -5,3 +5,6 @@
 /ProfChoosing$backListener.class
 /ProfChoosing$selectionListener.class
 /CharacterDetails$1.class
+/TraitScreen$backListener.class
+/TraitScreen.class
+/CharacterDetails$toTraitListener.class

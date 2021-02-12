@@ -40,6 +40,7 @@ public class CharacterDetails extends JPanel{
 	private JButton itemButton;
 	private JButton spellButton;
 	private JButton langButton;
+	private JButton traitButton;
 	private String characterID;
 	private HashMap<String,String> currentCharDetails;
 	private JButton deleteMe;
@@ -69,6 +70,10 @@ public class CharacterDetails extends JPanel{
 		this.langButton = new JButton("To Languages");
 		langButton.addActionListener(new toLangListener());
 		this.add(langButton, BorderLayout.PAGE_START);
+		
+		this.traitButton = new JButton("To Traits");
+		traitButton.addActionListener(new toTraitListener());
+		this.add(traitButton, BorderLayout.PAGE_START);
 		
 		this.deleteMe = new JButton("DELETE THIS CHARACTER");
 		this.deleteMe.addActionListener(new ActionListener() {
@@ -229,6 +234,13 @@ public class CharacterDetails extends JPanel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			manager.switchPage("Lang");
+		}	
+	}
+	
+	class toTraitListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			manager.switchPage("Trait");
 		}	
 	}
 }
