@@ -70,8 +70,8 @@ public class ItemScreen extends JPanel {
 //		int rows = this.items.size() > 10? 10:this.items.size();
 //		this.layout = new GridLayout(2,3);
 //		this.setLayout(layout);
-		if (this.itemTable != null) {
-			this.remove(itemTable);
+		if (this.itemScrollTable != null) {
+			this.remove(itemScrollTable);
 		}
 		try {
 			this.itemTable = new JTable(buildTableModel(this.items));

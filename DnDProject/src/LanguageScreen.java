@@ -69,8 +69,8 @@ public class LanguageScreen extends JPanel {
 //		int rows = this.items.size() > 10? 10:this.items.size();
 //		this.layout = new GridLayout(2,3);
 //		this.setLayout(layout);
-		if (this.langTable != null) {
-			this.remove(langTable);
+		if (this.langScrollTable != null) {
+			this.remove(langScrollTable);
 		}
 		try {
 			this.langTable = new JTable(buildTableModel(this.langs));
