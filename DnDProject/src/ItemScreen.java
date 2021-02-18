@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,13 +20,12 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-
-
-public class ItemScreen extends JPanel{
+public class ItemScreen extends JPanel {
 	private PageManager manager;
 	private ConnectionHelper loginHelper;
 	private ResultSet items;
@@ -35,73 +35,83 @@ public class ItemScreen extends JPanel{
 	private JTable itemTable;
 	private String characterID;
 	private JButton backButton;
-	
-	public ItemScreen(PageManager manager) { //This screen shows available characters
+	private JPanel optionsPanel;
+	private JTextField itemName;
+	private JScrollPane itemScrollTable;
+
+	public ItemScreen(PageManager manager) { // This screen shows available characters
 		this.manager = manager;
-		
+
 		this.newItemButton = new JButton("New Item");
-		
+		this.optionsPanel = new JPanel();
+		this.optionsPanel.setLayout(new GridLayout(0, 3));
 		this.characterID = "1";
-		
+		this.setLayout(new BorderLayout());
+		this.itemName = new JTextField();
+		this.optionsPanel.add(itemName);
+
 		newItemButton.addActionListener(new newItemButtonListener());
+		this.optionsPanel.add(newItemButton);
 		this.backButton = new JButton("Back To Stats");
 		backButton.addActionListener(new backListener());
-		this.add(backButton);
-		
+		this.optionsPanel.add(backButton);
+		this.add(this.optionsPanel, BorderLayout.SOUTH);
+
 //		this.add(characterField).setLocation(2, 0);
 //		this.add(newItemButton).setLocation(0, 0);
-		//hide();
-		
-		
-		
+		// hide();
 
-		
 	}
+
 	public void updateForCharacter() {
 		this.characterID = manager.getCharacterChosen();
 		System.out.println(this.characterID);
 		this.items = this.getItemNames();
 //		int rows = this.items.size() > 10? 10:this.items.size();
-		this.layout = new GridLayout(2,3);
-		this.setLayout(layout);
+//		this.layout = new GridLayout(2,3);
+//		this.setLayout(layout);
 		if (this.itemTable != null) {
 			this.remove(itemTable);
 		}
 		try {
 			this.itemTable = new JTable(buildTableModel(this.items));
-			this.add(this.itemTable).setLocation(2, 2);;
+			this.itemScrollTable = new JScrollPane(this.itemTable);
+			Dimension size = this.itemScrollTable.getPreferredSize();
+			size.setSize(size.width + 1000, size.height);
+			this.itemScrollTable.setPreferredSize(size);
+			this.add(this.itemScrollTable, BorderLayout.NORTH);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 	}
-	public ResultSet getItemNames(){
+
+	public ResultSet getItemNames() {
 		try {
 			HashMap<String, String> names = new HashMap<String, String>();
-			//System.out.println(this.manager.getConnection());
+			// System.out.println(this.manager.getConnection());
 //			if (this.characterID == null) {
 //				this.characterID = "2";
 //			}
 			CallableStatement cstmt = this.manager.getConnection().prepareCall("{call GetItems(?)}");
 			cstmt.setInt(1, Integer.valueOf(this.characterID));
-			
+
 			ResultSet rs = cstmt.executeQuery();
-			//System.out.println(rs);
+			// System.out.println(rs);
 //			System.out.println(rs);
 //			while (rs.next()) {
 //				names.put(rs.getString(1), rs.getString(2));
 //			}
-			//System.out.println(names);
+			// System.out.println(names);
 			return rs;
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
-	
+
 //	private HashMap<JButton, String> generateButtons() {
 //		HashMap<JButton,String> buttons = new HashMap<>();
 //		
@@ -117,49 +127,46 @@ public class ItemScreen extends JPanel{
 //		}
 //		return buttons;
 //	}
-	
-	
+
 	class newItemButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Switch to new char action listen");
 			manager.switchPage("AddCharacter");
-		}	
+		}
 	}
-	
-	
-	// Taken From https://stackoverflow.com/questions/10620448/most-simple-code-to-populate-jtable-from-resultset
-	public static DefaultTableModel buildTableModel(ResultSet rs)
-	        throws SQLException {
-	    ResultSetMetaData metaData = rs.getMetaData();
-	    // names of columns
-	    Vector<String> columnNames = new Vector<String>();
-	    int columnCount = metaData.getColumnCount();
-	    for (int column = 1; column <= columnCount; column++) {
-	        columnNames.add(metaData.getColumnName(column));
-	    }
-	    // data of the table
-	    Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-	    while (rs.next()) {
-	        Vector<Object> vector = new Vector<Object>();
-	        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-	            vector.add(rs.getObject(columnIndex));
-	        }
-	        data.add(vector);
-	    }
-	    return new DefaultTableModel(data, columnNames);
+
+	// Taken From
+	// https://stackoverflow.com/questions/10620448/most-simple-code-to-populate-jtable-from-resultset
+	public static DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
+		ResultSetMetaData metaData = rs.getMetaData();
+		// names of columns
+		Vector<String> columnNames = new Vector<String>();
+		int columnCount = metaData.getColumnCount();
+		for (int column = 1; column <= columnCount; column++) {
+			columnNames.add(metaData.getColumnName(column));
+		}
+		// data of the table
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+		while (rs.next()) {
+			Vector<Object> vector = new Vector<Object>();
+			for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+				vector.add(rs.getObject(columnIndex));
+			}
+			data.add(vector);
+		}
+		return new DefaultTableModel(data, columnNames);
 	}
-	
-	
+
 	public void toggleState() {
 		setEnabled(!isEnabled());
 	}
-	
+
 	class backListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			manager.switchPage("Details");
-		}	
+		}
 	}
-	
+
 }
