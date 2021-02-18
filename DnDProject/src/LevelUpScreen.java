@@ -56,7 +56,7 @@ public class LevelUpScreen extends JPanel{
 		this.add(enterDiceText);
 		
 		
-		submitButton = new JButton("OK");
+		submitButton = new JButton("Sumbit");
 		submitButton.addActionListener(new backListener());
 		this.add(submitButton);
 		this.setLayout(layout);
