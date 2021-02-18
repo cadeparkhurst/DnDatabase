@@ -72,7 +72,7 @@ public class SpellScreen extends JPanel{
 	}
 	public void updateForCharacter() {
 		this.characterID = manager.getCharacterChosen();
-		System.out.println(this.characterID);
+	//	System.out.println(this.characterID);
 		this.spells = this.getSpellData();
 //		int rows = this.items.size() > 10? 10:this.items.size();
 		

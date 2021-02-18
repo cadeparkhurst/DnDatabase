@@ -5,11 +5,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -17,8 +19,11 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
 
 public class CharacterDetails extends JPanel{
 	//private GridLayout layout;
@@ -35,6 +40,8 @@ public class CharacterDetails extends JPanel{
 	private JLabel Con;
 	private JLabel Cha;
 	private JLabel Str;
+	private JScrollPane classes;
+	private JTable classesTable;
 	private JLabel level;
 	private JButton backButton;
 	private JButton itemButton;
@@ -44,6 +51,7 @@ public class CharacterDetails extends JPanel{
 	private String characterID;
 	private HashMap<String,String> currentCharDetails;
 	private JButton deleteMe;
+	private JButton levelUp;
 	
 	
 	public CharacterDetails(PageManager manager) {
@@ -75,6 +83,18 @@ public class CharacterDetails extends JPanel{
 		traitButton.addActionListener(new toTraitListener());
 		this.add(traitButton, BorderLayout.PAGE_START);
 		
+		this.levelUp = new JButton("Level Up");
+		this.levelUp.addActionListener( new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				manager.switchPage("Level");
+			}
+			
+		});
+		this.add(levelUp);
+		
 		this.deleteMe = new JButton("DELETE THIS CHARACTER");
 		this.deleteMe.addActionListener(new ActionListener() {
 
@@ -84,10 +104,6 @@ public class CharacterDetails extends JPanel{
 				  if(a==JOptionPane.NO_OPTION) {
 					  return;
 				  }
-				  
-				
-				
-				
 				try {
 					CallableStatement cs = manager.getConnection().prepareCall("{? = call deleteCharacter(?)}");
 					cs.registerOutParameter(1, Types.INTEGER);
@@ -105,9 +121,7 @@ public class CharacterDetails extends JPanel{
 				}catch(SQLException e) {
 					e.printStackTrace();
 				}
-				
 			}
-			
 		});
 		this.add(deleteMe);
 	}
@@ -124,7 +138,9 @@ public class CharacterDetails extends JPanel{
 		this.add(Int);
 		this.add(Wis);
 		this.add(Cha);
-		this.add(level);
+		this.add(classes);
+		classes.setSize(30, 30);
+		//this.add(level);
 	}
 	
 	public void initJLabels() {
@@ -141,7 +157,9 @@ public class CharacterDetails extends JPanel{
 		this.Con = new JLabel();
 		this.Cha = new JLabel();
 		this.Str = new JLabel();
-		this.level = new JLabel();
+		this.classes=new JScrollPane();
+		this.classesTable = new JTable();
+		//this.level = new JLabel();
 		name.setBorder(border);
 		race.setBorder(border);
 		background.setBorder(border);
@@ -154,15 +172,13 @@ public class CharacterDetails extends JPanel{
 		Con.setBorder(border);
 		Cha.setBorder(border);
 		Str.setBorder(border);
-		level.setBorder(border);
+		//level.setBorder(border);
 	}
 	
 	public void updateForCurrentCharacter() {
 		this.characterID = manager.getCharacterChosen();
-		System.out.println("Current details: "+ characterID);
 		this.currentCharDetails = this.getDetails();
 		this.name.setText("Name: "+currentCharDetails.get("Name"));
-		System.out.println(this.name.getText());
 		this.race.setText("Race: "+ currentCharDetails.get("Race"));
 		this.background.setText("Background: "+currentCharDetails.get("Background"));
 		this.alignment.setText("Alignment: "+ currentCharDetails.get("Alignment"));
@@ -174,7 +190,20 @@ public class CharacterDetails extends JPanel{
 		this.Con.setText("Con: "+currentCharDetails.get("Con"));
 		this.Cha.setText("Cha: "+currentCharDetails.get("Cha"));
 		this.Str.setText("Str: "+currentCharDetails.get("Str"));
-		this.level.setText("Level: "+ currentCharDetails.get("Level"));
+		
+		try {
+			CallableStatement c = manager.getConnection().prepareCall("{? = call getAllClassLevels(?)}");
+			c.registerOutParameter(1, Types.INTEGER);
+			c.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
+			
+			ResultSet rs = c.executeQuery();
+			this.classesTable = new JTable(buildTableModel(rs));
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		this.classes.setViewportView(this.classesTable);
+		
+		//this.level.setText("Level: "+ currentCharDetails.get("Level"));
 	}
 	
 	
@@ -207,6 +236,28 @@ public class CharacterDetails extends JPanel{
 		}
 		
 		return stats;
+	}
+	
+	// Taken From https://stackoverflow.com/questions/10620448/most-simple-code-to-populate-jtable-from-resultset
+	public static DefaultTableModel buildTableModel(ResultSet rs)
+	        throws SQLException {
+	    ResultSetMetaData metaData = rs.getMetaData();
+	    // names of columns
+	    Vector<String> columnNames = new Vector<String>();
+	    int columnCount = metaData.getColumnCount();
+	    for (int column = 1; column <= columnCount; column++) {
+	        columnNames.add(metaData.getColumnName(column));
+	    }
+	    // data of the table
+	    Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+	    while (rs.next()) {
+	        Vector<Object> vector = new Vector<Object>();
+	        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+	            vector.add(rs.getObject(columnIndex));
+	        }
+	        data.add(vector);
+	    }
+	    return new DefaultTableModel(data, columnNames);
 	}
 	
 	class backListener implements ActionListener {
