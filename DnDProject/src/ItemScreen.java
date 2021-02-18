@@ -31,27 +31,80 @@ public class ItemScreen extends JPanel {
 	private ResultSet items;
 	private GridLayout layout;
 	private JTextField characterField;
-	private JButton newItemButton;
+	private JButton addItemButton;
+	private JButton removeItemButton;
 	private JTable itemTable;
 	private String characterID;
 	private JButton backButton;
 	private JPanel optionsPanel;
 	private JTextField itemName;
+	private JTextField itemQuant;
 	private JScrollPane itemScrollTable;
 
 	public ItemScreen(PageManager manager) { // This screen shows available characters
 		this.manager = manager;
 
-		this.newItemButton = new JButton("New Item");
+		
 		this.optionsPanel = new JPanel();
-		this.optionsPanel.setLayout(new GridLayout(0, 3));
+		this.optionsPanel.setLayout(new GridLayout(0, 5));
 		this.characterID = "1";
 		this.setLayout(new BorderLayout());
 		this.itemName = new JTextField();
 		this.optionsPanel.add(itemName);
-
-		newItemButton.addActionListener(new newItemButtonListener());
-		this.optionsPanel.add(newItemButton);
+		
+		this.itemQuant = new JTextField();
+		this.optionsPanel.add(itemQuant);
+		
+		this.addItemButton = new JButton("Add");
+		addItemButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					CallableStatement cs = manager.getConnection().prepareCall("{? = call addItem(?,?,?)}");
+					cs.registerOutParameter(1, Types.INTEGER);
+					cs.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
+					cs.setString(3,itemName.getText());
+					cs.setInt(4, Integer.valueOf(itemQuant.getText()));
+					
+				cs.execute();
+					
+					int retval = cs.getInt(1);
+					if(retval==0) {
+						manager.switchPage("Items");
+					}
+					
+				}catch(SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		this.optionsPanel.add(addItemButton);
+		
+		this.removeItemButton = new JButton("Remove");
+		removeItemButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					CallableStatement cs = manager.getConnection().prepareCall("{? = call removeItemByQuant(?,?,?)}");
+					cs.registerOutParameter(1, Types.INTEGER);
+					cs.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
+					cs.setString(3,itemName.getText());
+					cs.setInt(4, Integer.valueOf(itemQuant.getText()));
+					
+					cs.execute();
+					
+					int retval = cs.getInt(1);
+					if(retval==0) {
+						manager.switchPage("Items");
+					}
+					
+				}catch(SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
+		this.optionsPanel.add(removeItemButton);
+		
 		this.backButton = new JButton("Back To Stats");
 		backButton.addActionListener(new backListener());
 		this.optionsPanel.add(backButton);
@@ -128,13 +181,7 @@ public class ItemScreen extends JPanel {
 //		return buttons;
 //	}
 
-	class newItemButtonListener implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Switch to new char action listen");
-			manager.switchPage("AddCharacter");
-		}
-	}
+	
 
 	// Taken From
 	// https://stackoverflow.com/questions/10620448/most-simple-code-to-populate-jtable-from-resultset
