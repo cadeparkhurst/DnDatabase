@@ -209,7 +209,16 @@ public class CharacterDetails extends JPanel{
 			c.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
 			
 			ResultSet rs = c.executeQuery();
+			
+			int retval=c.getInt(1);
+			if(retval==1) {
+				JOptionPane.showMessageDialog(null, "That character does not exist in our records");
+				return;
+			}
+			
 			this.classesTable = new JTable(buildTableModel(rs));
+			
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -243,6 +252,12 @@ public class CharacterDetails extends JPanel{
 			stats.put("Con", rs.getString("Con"));
 			stats.put("Str",rs.getString("Str"));
 			stats.put("Level", rs.getString("Level"));
+			
+			int retval=cstmt.getInt(1);
+			if(retval==1) {
+				JOptionPane.showMessageDialog(null, "That character does not exist in our records.");
+			}
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}

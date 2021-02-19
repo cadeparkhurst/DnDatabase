@@ -471,11 +471,12 @@ public class main {
 			
 			s.remove(0); // remove header row
 			for(ArrayList<String> row : s) {
-				String query = "INSERT INTO Skill (Name) VALUES (?)";
+				String query = "INSERT INTO Skill (Name,relatedSkill) VALUES (?,?)";
 				PreparedStatement p = connection.prepareStatement(query);
 
 				p.setString(1, row.get(0));
-	
+				p.setString(2, row.get(1));	
+				
 				p.execute();	
 			}
 		}catch (Exception e) {

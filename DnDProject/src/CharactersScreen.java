@@ -56,16 +56,13 @@ public class CharactersScreen extends JPanel{
 	public HashMap<String, String> getCharacterNames(){
 		try {
 			HashMap<String, String> names = new HashMap<String, String>();
-			//System.out.println(this.manager.getConnection());
 			CallableStatement cstmt = this.manager.getConnection().prepareCall("{call GetCharNames}");
 			
 			ResultSet rs = cstmt.executeQuery();
-			//System.out.println(rs);
 			
 			while (rs.next()) {
 				names.put(rs.getString(1), rs.getString(2));
 			}
-			//System.out.println(names);
 			return names;
 			
 		} catch (SQLException e) {

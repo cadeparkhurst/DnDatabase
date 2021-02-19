@@ -148,6 +148,11 @@ public class SpellScreen extends JPanel{
 				rs.next();
 				int spellID = rs.getInt("SpellID");
 				
+				int ret=cstmt2.getInt(1);
+				if(ret==1) {
+					JOptionPane.showMessageDialog(null, "That spell is not currently supported (Maybe double check your spelling).");
+				}
+				
 				CallableStatement cstmt = manager.getConnection().prepareCall("{? = call learnSpell(?,?)}");
 				cstmt.registerOutParameter(1, Types.INTEGER);
 				cstmt.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
@@ -160,8 +165,14 @@ public class SpellScreen extends JPanel{
 				if(retval==0) {
 					 updateForCharacter();
 					 manager.switchPage("Spells");
-				}else {
-					JOptionPane.showMessageDialog(null, "Learning Spell Failed");
+				}else if(retval==1) {
+					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
+				}else if(retval==2) {
+					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
+				}else if(retval==3) {
+					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
+				}else if(retval==4) {
+					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
 				}
 				
 				

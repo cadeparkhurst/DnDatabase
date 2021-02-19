@@ -18,6 +18,7 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
@@ -66,13 +67,25 @@ public class ItemScreen extends JPanel {
 					cs.registerOutParameter(1, Types.INTEGER);
 					cs.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
 					cs.setString(3,itemName.getText());
-					cs.setInt(4, Integer.valueOf(itemQuant.getText()));
+					try {
+						int t = Integer.valueOf(itemQuant.getText());
+						cs.setInt(4, t);
+					}catch(NumberFormatException ex) {
+						JOptionPane.showMessageDialog(null, "Incorrect value in Quantity field, not an int.");
+						return;
+					}
 					
 				cs.execute();
 					
 					int retval = cs.getInt(1);
 					if(retval==0) {
 						manager.switchPage("Items");
+					}else if(retval==1) {
+						JOptionPane.showMessageDialog(null, "That character does not exist.");
+						return;
+					}else if(retval==2) {
+						JOptionPane.showMessageDialog(null, "No item with that name exist.");
+						return;
 					}
 					
 				}catch(SQLException ex) {
@@ -91,13 +104,27 @@ public class ItemScreen extends JPanel {
 					cs.registerOutParameter(1, Types.INTEGER);
 					cs.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
 					cs.setString(3,itemName.getText());
-					cs.setInt(4, Integer.valueOf(itemQuant.getText()));
+					
+					try {
+						int t = Integer.valueOf(itemQuant.getText());
+						cs.setInt(4, t);
+					}catch(NumberFormatException ex) {
+						JOptionPane.showMessageDialog(null, "Incorrect value in Quantity field, not an int.");
+						return;
+					}
+					
 					
 					cs.execute();
 					
 					int retval = cs.getInt(1);
 					if(retval==0) {
 						manager.switchPage("Items");
+					}else if(retval==1) {
+						JOptionPane.showMessageDialog(null, "That character does not exist.");
+						return;
+					}else if(retval==2) {
+						JOptionPane.showMessageDialog(null, "No item with that name exist.");
+						return;
 					}
 					
 				}catch(SQLException ex) {

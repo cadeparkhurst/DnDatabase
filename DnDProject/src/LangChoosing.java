@@ -125,6 +125,11 @@ public class LangChoosing extends JPanel{
 			
 			rs.next();
 			numLangs = rs.getInt("NumLanguagesGained");
+			
+			int retval=cstmt.getInt(1);
+			if(retval==1) {
+				JOptionPane.showMessageDialog(null, "That character does not exist.");
+			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -156,8 +161,12 @@ public class LangChoosing extends JPanel{
 					int retval = cstmt.getInt(1);
 					if(retval==0) {
 						manager.switchPage("character");
-					}else {
-						JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
+					}else if(retval==1) {
+						JOptionPane.showMessageDialog(null, "That character does not exist.");
+					}else if(retval==2) {
+						JOptionPane.showMessageDialog(null, "That Language is not supported.");
+					}else if(retval==3) {
+						JOptionPane.showMessageDialog(null, "This character already knows that language.");
 					}
 					
 					
