@@ -50,9 +50,11 @@ public class ItemScreen extends JPanel {
 		this.characterID = "1";
 		this.setLayout(new BorderLayout());
 		this.itemName = new JTextField();
+		this.itemName.setText("Item Name");
 		this.optionsPanel.add(itemName);
 		
 		this.itemQuant = new JTextField();
+		this.itemQuant.setText("Quantity");
 		this.optionsPanel.add(itemQuant);
 		
 		this.addItemButton = new JButton("Add");
@@ -120,6 +122,8 @@ public class ItemScreen extends JPanel {
 		this.characterID = manager.getCharacterChosen();
 		System.out.println(this.characterID);
 		this.items = this.getItemNames();
+		this.itemQuant.setText("Quantity");
+		this.itemName.setText("Item Name");
 //		int rows = this.items.size() > 10? 10:this.items.size();
 //		this.layout = new GridLayout(2,3);
 //		this.setLayout(layout);
@@ -134,7 +138,6 @@ public class ItemScreen extends JPanel {
 			this.itemScrollTable.setPreferredSize(size);
 			this.add(this.itemScrollTable, BorderLayout.NORTH);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
