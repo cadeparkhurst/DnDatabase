@@ -1774,6 +1774,12 @@ BEGIN
 END
 GRANT EXECUTE ON updateWeapon TO dndatabasefrontend
 GO
+CREATE INDEX charOwns ON IsOwnedBy(CharacterID);
+CREATE INDEX charLevelsIn ON Has_Levels_In(CharacterID);
+CREATE INDEX charProf ON ChoseProficiency(CharacterID);
+CREATE INDEX charLang ON Knows_Language(CharacterID);
+CREATE INDEX charSpell ON KnowsSpell(CharacterID);
+GO
 USE [master]
 GO
 ALTER DATABASE [DnD_goodriat_oriansaj_parkhuca31] SET  READ_WRITE 
