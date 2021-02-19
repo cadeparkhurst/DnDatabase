@@ -126,24 +126,24 @@ public class SkillScreen extends JPanel{
 		this.characterID = manager.getCharacterChosen();
 		System.out.println("Current details: "+ characterID);
 		this.currentCharDetails = this.getDetails();
-//		acro.setText("Acrobatics "+);
-//		anim.setText("Animal Handeling "+);
-//		arc.setText("Arcana "+);
-//		ath.setText("Athletics "+);
-//		dec.setText("Deception"+);
-//		his.setText("History "+);
-//		ins.setText("Insight "+);
-//		inv.setText("Investigation "+);
-//		inti.setText("Intimidation "+);
-//		med.setText("Medicine "+);
-//		nat.setText("Nature "+);
-//		perc.setText("Perception "+);
-//		perf.setText("Performance "+);
-//		pers.setText("Persuasion "+);
-//		reg.setText("Regligion "+);
-//		soh.setText("Sleight of Hand"+);
-//		stl.setText("Stelth "+);
-//		sur.setText("Survival "+);
+		acro.setText("Acrobatics "+this.currentCharDetails.get("Acrobatics"));
+		anim.setText("Animal Handling "+this.currentCharDetails.get("Animal Handling"));
+		arc.setText("Arcana "+this.currentCharDetails.get("Arcana"));
+		ath.setText("Athletics "+this.currentCharDetails.get("Athletics"));
+		dec.setText("Deception"+this.currentCharDetails.get("Deception"));
+		his.setText("History "+this.currentCharDetails.get("History"));
+		ins.setText("Insight "+this.currentCharDetails.get("Insight"));
+		inv.setText("Investigation "+this.currentCharDetails.get("Investigation"));
+		inti.setText("Intimidation "+this.currentCharDetails.get("Intimidation"));
+		med.setText("Medicine "+this.currentCharDetails.get("Medicine"));
+		nat.setText("Nature "+this.currentCharDetails.get("Nature"));
+		perc.setText("Perception "+this.currentCharDetails.get("Perception"));
+		perf.setText("Performance "+this.currentCharDetails.get("Performance"));
+		pers.setText("Persuasion "+this.currentCharDetails.get("Persuasion"));
+		reg.setText("Religion "+this.currentCharDetails.get("Religion"));
+		soh.setText("Sleight of Hand"+this.currentCharDetails.get("Sleight of Hand"));
+		stl.setText("Stealth "+this.currentCharDetails.get("Stealth"));
+		sur.setText("Survival "+this.currentCharDetails.get("Survival"));
 	}
 	
 	
@@ -151,6 +151,7 @@ public class SkillScreen extends JPanel{
 	
 	private HashMap<String,String> getDetails(){
 		HashMap<String,String> stats = new HashMap<>();
+		HashMap<String,String> skillValues = new HashMap<String, String>();
 		try {
 			CallableStatement cstmt = this.manager.getConnection().prepareCall("{? = call getCharacterInfo(?)}");
 			cstmt.registerOutParameter(1, Types.INTEGER);
@@ -158,18 +159,39 @@ public class SkillScreen extends JPanel{
 			
 			ResultSet rs = cstmt.executeQuery();
 			
-			CallableStatement cstmt2 = this.manager.getConnection().prepareCall("{? = call getSkills(?)}");
+			rs.next();
+			stats.put("Dex", rs.getString("Dex"));
+			stats.put("Int", rs.getString("Int"));
+			stats.put("Wis", rs.getString("Wis"));
+			stats.put("Cha", rs.getString("Cha"));
+			stats.put("Con", rs.getString("Con"));
+			stats.put("Str",rs.getString("Str"));
+			stats.put("Level", rs.getString("Level"));
+			
+			CallableStatement cstmt2 = this.manager.getConnection().prepareCall("{? = call getAllSkillsProfs(?)}");
 			cstmt2.registerOutParameter(1, Types.INTEGER);
 			cstmt2.setInt(2, Integer.valueOf(this.characterID));
 			
 			ResultSet rs2 = cstmt2.executeQuery();
-			rs.next();
-			stats.put("Athletics", rs.getString("Athletics"));
+			
+			while(rs2.next()) {
+				skillValues.put(rs2.getString("Name"), String.valueOf(getBonus(rs2.getString("relatedStat"), rs2.getObject("CharacterID") != null, stats)));
+			}
+			
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return stats;
+		return skillValues;
+	}
+	
+	private int getBonus(String baseStat, boolean hasProf, HashMap<String,String> stats) {
+		int profBonus = (int) Math.ceil((Integer.valueOf(stats.get("Level"))) / 4)+1;
+		int value = (int) Math.floor((Integer.valueOf(stats.get(baseStat))-10)/2);
+		if (hasProf) {
+			value += profBonus;
+		}
+		return value;
 	}
 	
 	class backListener implements ActionListener {

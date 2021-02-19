@@ -48,6 +48,7 @@ public class CharacterDetails extends JPanel{
 	private JButton spellButton;
 	private JButton langButton;
 	private JButton traitButton;
+	private JButton skillButton;
 	private String characterID;
 	private HashMap<String,String> currentCharDetails;
 	private JButton deleteMe;
@@ -82,6 +83,10 @@ public class CharacterDetails extends JPanel{
 		this.traitButton = new JButton("To Traits");
 		traitButton.addActionListener(new toTraitListener());
 		this.add(traitButton, BorderLayout.PAGE_START);
+		
+		this.skillButton = new JButton("To Skills");
+		skillButton.addActionListener(new toSkillListener());
+		this.add(skillButton, BorderLayout.PAGE_START);
 		
 		this.levelUp = new JButton("Level Up");
 		this.levelUp.addActionListener( new ActionListener() {
@@ -292,6 +297,13 @@ public class CharacterDetails extends JPanel{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			manager.switchPage("Trait");
+		}	
+	}
+	
+	class toSkillListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			manager.switchPage("Skill");
 		}	
 	}
 }

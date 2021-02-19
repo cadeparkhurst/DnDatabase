@@ -20,6 +20,7 @@ public class PageManager{
 	private ProfChoosing profsScreen;
 	private LangChoosing langScreen;
 	private LevelUpScreen levelScreen;
+	private SkillScreen skillScreen;
 	
 	
 	public PageManager(JFrame frame, JPanel panel) {
@@ -38,6 +39,7 @@ public class PageManager{
 		this.traitScreen = new TraitScreen(this);
 		this.langScreen = new LangChoosing(this);
 		this.levelScreen = new LevelUpScreen(this);
+		this.skillScreen = new SkillScreen(this);
 		
 		
 		
@@ -57,6 +59,8 @@ public class PageManager{
 		this.getPanel().add(this.traitScreen);
 		this.getPanel().add(this.langScreen);
 		this.getPanel().add(this.levelScreen);
+		this.getPanel().add(this.skillScreen);
+
 		
 		this.switchPage("login");
 		System.out.println(this.loginPage.isEnabled());
@@ -75,6 +79,7 @@ public class PageManager{
 		this.traitScreen.setVisible(false);
 		this.langScreen.setVisible(false);
 		this.levelScreen.setVisible(false);
+		this.skillScreen.setVisible(false);
 		
 		switch(name) {
 		case "character": this.characterScreen.updateScreen();
@@ -92,6 +97,7 @@ public class PageManager{
 		case "Prof": this.profsScreen.setVisible(true); break;
 		case "Language": this.langScreen.updatePage(); this.langScreen.setVisible(true); break;
 		case "Level": this.levelScreen.setVisible(true); break;
+		case "Skill": this.skillScreen.updateForCurrentCharacter(); this.skillScreen.setVisible(true); break;
 		default: break;
 		}
 		
