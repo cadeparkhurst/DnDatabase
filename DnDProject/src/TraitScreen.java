@@ -54,8 +54,8 @@ public class TraitScreen extends JPanel{
 		this.characterID = manager.getCharacterChosen();
 		System.out.println(this.characterID);
 		this.traits = this.getTraits();
-		this.layout = new GridLayout(2,3);
-		this.setLayout(layout);
+//		this.layout = new GridLayout(2,3);
+//		this.setLayout(layout);
 		if (this.traitScrollTable != null) {
 			this.remove(traitScrollTable);
 		}
