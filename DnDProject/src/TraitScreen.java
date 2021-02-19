@@ -20,11 +20,10 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-
-
 
 public class TraitScreen extends JPanel{
 	private PageManager manager;
@@ -35,39 +34,38 @@ public class TraitScreen extends JPanel{
 	private JTable traitTable;
 	private String characterID;
 	private JButton backButton;
+	private JPanel optionsPanel;
+	private JScrollPane traitScrollTable;
 	
 	public TraitScreen(PageManager manager) { //This screen shows available characters
 		this.manager = manager;
 		
-		
+		this.optionsPanel = new JPanel();
+		this.optionsPanel.setLayout(new GridLayout(0,3));
 		this.characterID = "1";
-		
+		this.setLayout(new BorderLayout());
 		this.backButton = new JButton("Back To Stats");
 		backButton.addActionListener(new backListener());
-		this.add(backButton);
-		
-
-		
-		
-		
-
-		
+		this.optionsPanel.add(backButton);
+		this.add(this.optionsPanel, BorderLayout.SOUTH);
 	}
+	
 	public void updateForCharacter() {
 		this.characterID = manager.getCharacterChosen();
 		System.out.println(this.characterID);
 		this.traits = this.getTraits();
 		this.layout = new GridLayout(2,3);
 		this.setLayout(layout);
-		if (this.traitTable != null) {
-			this.remove(traitTable);
+		if (this.traitScrollTable != null) {
+			this.remove(traitScrollTable);
 		}
 		try {
 			this.traitTable = new JTable(buildTableModel(this.traits));
-			Dimension size = this.traitTable.getPreferredSize();
-			size.setSize(size.width+700, size.height);
-			this.traitTable.setPreferredSize(size);
-			this.add(this.traitTable).setLocation(2, 2);
+			this.traitScrollTable = new JScrollPane(this.traitTable);
+			Dimension size = this.traitScrollTable.getPreferredSize();
+			size.setSize(size.width+1000, size.height);
+			this.traitScrollTable.setPreferredSize(size);
+			this.add(this.traitScrollTable, BorderLayout.NORTH);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
