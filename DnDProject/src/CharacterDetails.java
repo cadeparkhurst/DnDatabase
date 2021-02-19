@@ -53,13 +53,15 @@ public class CharacterDetails extends JPanel{
 	private HashMap<String,String> currentCharDetails;
 	private JButton deleteMe;
 	private JButton levelUp;
+	private JPanel statsPanel;
 	
 	
 	public CharacterDetails(PageManager manager) {
 		this.manager = manager;
-		this.backButton = new JButton("Back To Characters");
-		backButton.addActionListener(new backListener());
-		this.add(backButton, BorderLayout.PAGE_START);
+		this.setLayout(new BorderLayout());
+		this.statsPanel = new JPanel();
+		this.statsPanel.setLayout(new GridLayout(0, 7));
+		
 		
 		initJLabels();
 		
@@ -70,23 +72,23 @@ public class CharacterDetails extends JPanel{
 		this.setEnabled(false);
 		this.itemButton = new JButton("To Items");
 		itemButton.addActionListener(new toItemsListener());
-		this.add(itemButton, BorderLayout.PAGE_START);
+		this.statsPanel.add(itemButton, BorderLayout.PAGE_START);
 		
 		this.spellButton = new JButton("To Spells");
 		spellButton.addActionListener(new toSpellsListener());
-		this.add(spellButton, BorderLayout.PAGE_START);
+		this.statsPanel.add(spellButton, BorderLayout.PAGE_START);
 		
 		this.langButton = new JButton("To Languages");
 		langButton.addActionListener(new toLangListener());
-		this.add(langButton, BorderLayout.PAGE_START);
+		this.statsPanel.add(langButton, BorderLayout.PAGE_START);
 		
 		this.traitButton = new JButton("To Traits");
 		traitButton.addActionListener(new toTraitListener());
-		this.add(traitButton, BorderLayout.PAGE_START);
+		this.statsPanel.add(traitButton, BorderLayout.PAGE_START);
 		
 		this.skillButton = new JButton("To Skills");
 		skillButton.addActionListener(new toSkillListener());
-		this.add(skillButton, BorderLayout.PAGE_START);
+		this.statsPanel.add(skillButton, BorderLayout.PAGE_START);
 		
 		this.levelUp = new JButton("Level Up");
 		this.levelUp.addActionListener( new ActionListener() {
@@ -98,7 +100,11 @@ public class CharacterDetails extends JPanel{
 			}
 			
 		});
-		this.add(levelUp);
+		this.statsPanel.add(levelUp);
+		
+		this.backButton = new JButton("Back To Characters");
+		backButton.addActionListener(new backListener());
+		this.statsPanel.add(backButton, BorderLayout.PAGE_START);
 		
 		this.deleteMe = new JButton("DELETE THIS CHARACTER");
 		this.deleteMe.addActionListener(new ActionListener() {
@@ -128,23 +134,24 @@ public class CharacterDetails extends JPanel{
 				}
 			}
 		});
-		this.add(deleteMe);
+		this.statsPanel.add(deleteMe);
+		this.add(statsPanel, BorderLayout.WEST);
 	}
 	public void placeLabels() {
-		this.add(name);
-		this.add(race);
-		this.add(background);
-		this.add(alignment);
-		this.add(MaxHP);
-		this.add(HP);
-		this.add(Str);
-		this.add(Dex);
-		this.add(Con);
-		this.add(Int);
-		this.add(Wis);
-		this.add(Cha);
-		this.add(classes);
-		classes.setSize(30, 30);
+		this.statsPanel.add(name);
+		this.statsPanel.add(race);
+		this.statsPanel.add(background);
+		this.statsPanel.add(alignment);
+		this.statsPanel.add(MaxHP);
+		this.statsPanel.add(HP);
+		this.statsPanel.add(Str);
+		this.statsPanel.add(Dex);
+		this.statsPanel.add(Con);
+		this.statsPanel.add(Int);
+		this.statsPanel.add(Wis);
+		this.statsPanel.add(Cha);
+		this.add(classes,BorderLayout.EAST);
+		classes.setSize(15, 10);
 		//this.add(level);
 	}
 	
