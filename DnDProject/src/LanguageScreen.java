@@ -18,6 +18,7 @@ import java.util.Vector;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
@@ -125,8 +126,30 @@ public class LanguageScreen extends JPanel {
 	class newLangButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Switch to new char action listen");
-			manager.switchPage("AddCharacter");
+			String lang = langName.getText();
+			langName.setText("");
+			try {			
+				CallableStatement cstmt = manager.getConnection().prepareCall("{? = call learnLanguage(?,?)}");
+				cstmt.registerOutParameter(1, Types.INTEGER);
+				cstmt.setInt(2, Integer.valueOf(manager.getCharacterChosen()));
+				cstmt.setString(3, lang);
+				
+				cstmt.execute();
+				
+				int retval = cstmt.getInt(1);
+				
+				if(retval==0) {
+					 updateForCharacter();
+					 manager.switchPage("Lang");
+				}else {
+					JOptionPane.showMessageDialog(null, "Learning Language Failed");
+				}
+				
+				
+				
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
 		}
 	}
 
