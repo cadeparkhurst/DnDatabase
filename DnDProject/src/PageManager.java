@@ -26,7 +26,7 @@ public class PageManager{
 	public PageManager(JFrame frame, JPanel panel) {
 		this.setPanel(panel);
 		this.setFrame(frame);
-		this.loginHelper = new ConnectionHelper("titan.csse.rose-hulman.edu","DnD_goodriat_oriansaj_parkhuca30");
+		this.loginHelper = new ConnectionHelper("titan.csse.rose-hulman.edu","DnD_goodriat_oriansaj_parkhuca31");
 		this.loginHelper.connect();
 		this.loginPage = new LogInPage(this, loginHelper);
 		this.characterScreen = new CharactersScreen(this);

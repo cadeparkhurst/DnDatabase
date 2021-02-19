@@ -885,6 +885,10 @@ BEGIN
 
 	DECLARE @newid int;
 	SET @newid = (SELECT MAX(CharacterID) FROM [Character]) + 1;
+	IF(@newid IS NULL)
+	BEGIN
+		SET @newid = 1;
+	END
 
 	INSERT INTO Character(CharacterID, [Str], Dex, [Int], Wis, Cha, Alignment, HP, MaxHP, Con, Background, Race, [Name])
 	VALUES(@newid, @str, @dex, @intel, @wis, @cha, @alignment, @hp, @maxhp, @con, @backgroundName, @raceName, @name);
