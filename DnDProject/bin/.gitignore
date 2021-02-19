@@ -2,6 +2,7 @@
 /AddCharacterScreen$backListener.class
 /AddCharacterScreen.class
 /CharacterDetails$1.class
+/CharacterDetails$2.class
 /CharacterDetails$backListener.class
 /CharacterDetails$toItemsListener.class
 /CharacterDetails$toLangListener.class
@@ -12,19 +13,17 @@
 /CharactersScreen$newCharButtonListener.class
 /CharactersScreen.class
 /ConnectionHelper.class
+/ItemScreen$1.class
+/ItemScreen$2.class
 /ItemScreen$backListener.class
-/ItemScreen$newItemButtonListener.class
 /ItemScreen.class
 /LangChoosing$backListener.class
 /LangChoosing.class
-<<<<<<< HEAD
-/LevelUpScreen.class
-/LevelUpScreen$backListener.class
-/CharacterDetails$2.class
-=======
 /LanguageScreen$backListener.class
 /LanguageScreen$newLangButtonListener.class
 /LanguageScreen.class
+/LevelUpScreen$backListener.class
+/LevelUpScreen.class
 /LogInPage$Listener.class
 /LogInPage$RegisterListener.class
 /LogInPage.class
@@ -37,6 +36,9 @@
 /SpellScreen.class
 /TraitScreen$backListener.class
 /TraitScreen.class
->>>>>>> 8fb477d66e3c3157f56ad9547df4541928c7156a
-/ItemScreen$1.class
-/ItemScreen$2.class
+/SkillScreen$backListener.class
+/SkillScreen$toItemsListener.class
+/SkillScreen$toLangListener.class
+/SkillScreen$toSpellsListener.class
+/SkillScreen$toTraitListener.class
+/SkillScreen.class
