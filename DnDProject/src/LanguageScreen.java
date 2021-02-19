@@ -148,7 +148,8 @@ public class LanguageScreen extends JPanel {
 				
 				
 			} catch (SQLException e1) {
-				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null, e1.getMessage());
+				//e1.printStackTrace();
 			}
 		}
 	}

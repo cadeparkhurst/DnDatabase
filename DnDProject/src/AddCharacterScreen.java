@@ -227,11 +227,12 @@ public class AddCharacterScreen extends JPanel{
 				if(retval==0) {
 					manager.getProfPage().updatePage(classid);
 					manager.switchPage("Prof");
-				}else {
-					JOptionPane.showMessageDialog(null, "There was an error adding your character, with error code: "+retval);
-				}
+				}//else {
+//					JOptionPane.showMessageDialog(null, "There was an error adding your character, with error code: "+retval);
+//				}
 			}catch (SQLException exception) {
-				exception.printStackTrace();
+				JOptionPane.showMessageDialog(null, exception.getMessage());
+				//exception.printStackTrace();
 			}
 		}	
 	}

@@ -112,7 +112,8 @@ public class SpellScreen extends JPanel{
 			return rs;
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		//	e.printStackTrace();
 			return null;
 		}
 	}
@@ -160,25 +161,24 @@ public class SpellScreen extends JPanel{
 				
 				cstmt.execute();
 				
-				int retval = cstmt.getInt(1);
-				
+				int retval = cstmt.getInt(1);			
 				if(retval==0) {
 					 updateForCharacter();
 					 manager.switchPage("Spells");
-				}else if(retval==1) {
-					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
-				}else if(retval==2) {
-					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
-				}else if(retval==3) {
-					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
-				}else if(retval==4) {
-					JOptionPane.showMessageDialog(null, "There was an error learning languages, please try again");
-				}
+				}//else if(retval==1) {
+//					JOptionPane.showMessageDialog(null, "Character must not be null and must exist in the Character table");
+//				}else if(retval==2) {
+//					JOptionPane.showMessageDialog(null, "That spell is not supported (please check spelling).");
+//				}else if(retval==3) {
+//					JOptionPane.showMessageDialog(null, "This character already knows that spell.");
+//				}else if(retval==4) {
+//					JOptionPane.showMessageDialog(null, "This charcter is not able to learn this spell.");
+//				}
 				
 				
 				
 			} catch (SQLException e1) {
-				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null, e1.getMessage());
 			}
 			
 		}	

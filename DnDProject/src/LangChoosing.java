@@ -126,12 +126,13 @@ public class LangChoosing extends JPanel{
 			rs.next();
 			numLangs = rs.getInt("NumLanguagesGained");
 			
-			int retval=cstmt.getInt(1);
-			if(retval==1) {
-				JOptionPane.showMessageDialog(null, "That character does not exist.");
-			}
+//			int retval=cstmt.getInt(1);
+//			if(retval==1) {
+//				JOptionPane.showMessageDialog(null, "That character does not exist.");
+//			}
 		}catch(SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			//e.printStackTrace();
 		}
 		return numLangs;
 	}
@@ -161,17 +162,18 @@ public class LangChoosing extends JPanel{
 					int retval = cstmt.getInt(1);
 					if(retval==0) {
 						manager.switchPage("character");
-					}else if(retval==1) {
-						JOptionPane.showMessageDialog(null, "That character does not exist.");
-					}else if(retval==2) {
-						JOptionPane.showMessageDialog(null, "That Language is not supported.");
-					}else if(retval==3) {
-						JOptionPane.showMessageDialog(null, "This character already knows that language.");
-					}
+					}//else if(retval==1) {
+//						JOptionPane.showMessageDialog(null, "That character does not exist.");
+//					}else if(retval==2) {
+//						JOptionPane.showMessageDialog(null, "That Language is not supported.");
+//					}else if(retval==3) {
+//						JOptionPane.showMessageDialog(null, "This character already knows that language.");
+//					}
 					
 					
 				} catch (SQLException ex) {
-					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+					//ex.printStackTrace();
 				}
 			}
 		}	

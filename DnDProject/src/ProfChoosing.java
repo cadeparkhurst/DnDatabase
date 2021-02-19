@@ -79,8 +79,15 @@ public class ProfChoosing extends JPanel{
 			
 			rs.next();
 			numProfs = rs.getInt("numSkillProfs");
+			
+//			int retval = cstmt.getInt(1);
+//			if(retval==1) {
+//				JOptionPane.showMessageDialog(null, "That class is not supported.");
+//				return 0;
+//			}
 		}catch(SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			//e.printStackTrace();
 		}
 		
 		
@@ -102,8 +109,15 @@ public class ProfChoosing extends JPanel{
 				skills.add(rs.getString("SkillName"));
 			}
 			
+//			int retval = cstmt.getInt(1);
+//			if(retval==1) {
+//				JOptionPane.showMessageDialog(null, "That class is not supported.");
+//				return null;
+//			}
+			
 		} catch (SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			//e.printStackTrace();
 		}
 		
 		return skills;
@@ -137,13 +151,14 @@ public class ProfChoosing extends JPanel{
 					int retval = cstmt.getInt(1);
 					if(retval==0) {
 						manager.switchPage("Language");
-					}else {
-						JOptionPane.showMessageDialog(null, "There was an error selecting profs, please try again");
-					}
+					}//else {
+//						JOptionPane.showMessageDialog(null, "There was an error selecting profs, please try again");
+//					}
 					
 					
 				} catch (SQLException ex) {
-					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+					//ex.printStackTrace();
 				}
 			}
 		}	

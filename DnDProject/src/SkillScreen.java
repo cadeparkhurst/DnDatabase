@@ -168,6 +168,12 @@ public class SkillScreen extends JPanel{
 			stats.put("Str",rs.getString("Str"));
 			stats.put("Level", rs.getString("Level"));
 			
+//			int ret = cstmt.getInt(1);
+//			if(ret==1) {
+//				JOptionPane.showMessageDialog(null, "That character does not exist.");
+//				return null;
+//			}
+			
 			CallableStatement cstmt2 = this.manager.getConnection().prepareCall("{? = call getAllSkillsProfs(?)}");
 			cstmt2.registerOutParameter(1, Types.INTEGER);
 			cstmt2.setInt(2, Integer.valueOf(this.characterID));
@@ -178,8 +184,14 @@ public class SkillScreen extends JPanel{
 				skillValues.put(rs2.getString("Name"), String.valueOf(getBonus(rs2.getString("relatedStat"), rs2.getObject("CharacterID") != null, stats)));
 			}
 			
+//			if(cstmt2.getInt(1)!=0) {
+//				JOptionPane.showMessageDialog(null, "That character does not exist.");
+//				return null;
+//			}
+			
 		}catch(SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			//e.printStackTrace();
 		}
 		
 		return skillValues;

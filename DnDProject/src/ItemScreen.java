@@ -80,16 +80,17 @@ public class ItemScreen extends JPanel {
 					int retval = cs.getInt(1);
 					if(retval==0) {
 						manager.switchPage("Items");
-					}else if(retval==1) {
-						JOptionPane.showMessageDialog(null, "That character does not exist.");
-						return;
-					}else if(retval==2) {
-						JOptionPane.showMessageDialog(null, "No item with that name exist.");
-						return;
-					}
-					
+					}//else if(retval==1) {
+//						JOptionPane.showMessageDialog(null, "That character does not exist.");
+//						return;
+//					}else if(retval==2) {
+//						JOptionPane.showMessageDialog(null, "No item with that name exist.");
+//						return;
+//					}
+//					
 				}catch(SQLException ex) {
-					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+					//ex.printStackTrace();
 				}
 			}
 		});
@@ -119,16 +120,17 @@ public class ItemScreen extends JPanel {
 					int retval = cs.getInt(1);
 					if(retval==0) {
 						manager.switchPage("Items");
-					}else if(retval==1) {
-						JOptionPane.showMessageDialog(null, "That character does not exist.");
-						return;
-					}else if(retval==2) {
-						JOptionPane.showMessageDialog(null, "No item with that name exist.");
-						return;
-					}
+					}//else if(retval==1) {
+//						JOptionPane.showMessageDialog(null, "That character does not exist.");
+//						return;
+//					}else if(retval==2) {
+//						JOptionPane.showMessageDialog(null, "No item with that name exist.");
+//						return;
+//					}
 					
 				}catch(SQLException ex) {
-					ex.printStackTrace();
+					JOptionPane.showMessageDialog(null, ex.getMessage());
+					//ex.printStackTrace();
 				}
 			}
 		});

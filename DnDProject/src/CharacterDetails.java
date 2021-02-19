@@ -130,7 +130,8 @@ public class CharacterDetails extends JPanel{
 					}
 					
 				}catch(SQLException e) {
-					e.printStackTrace();
+					JOptionPane.showMessageDialog(null, e.getMessage());
+					//e.printStackTrace();
 				}
 			}
 		});
@@ -210,17 +211,16 @@ public class CharacterDetails extends JPanel{
 			
 			ResultSet rs = c.executeQuery();
 			
-			int retval=c.getInt(1);
-			if(retval==1) {
-				JOptionPane.showMessageDialog(null, "That character does not exist in our records");
-				return;
-			}
-			
 			this.classesTable = new JTable(buildTableModel(rs));
 			
-			
+//			int retval=c.getInt(1);
+//			if(retval==1) {
+//				JOptionPane.showMessageDialog(null, "That character does not exist in our records");
+//				return;
+//			}
 		}catch(SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			//e.printStackTrace();
 		}
 		this.classes.setViewportView(this.classesTable);
 		
@@ -253,13 +253,14 @@ public class CharacterDetails extends JPanel{
 			stats.put("Str",rs.getString("Str"));
 			stats.put("Level", rs.getString("Level"));
 			
-			int retval=cstmt.getInt(1);
-			if(retval==1) {
-				JOptionPane.showMessageDialog(null, "That character does not exist in our records.");
-			}
+//			int retval=cstmt.getInt(1);
+//			if(retval==1) {
+//				JOptionPane.showMessageDialog(null, "That character does not exist in our records.");
+//			}
 			
 		}catch(SQLException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			//e.printStackTrace();
 		}
 		
 		return stats;
