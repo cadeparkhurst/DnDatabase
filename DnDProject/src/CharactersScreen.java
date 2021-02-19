@@ -95,7 +95,7 @@ public class CharactersScreen extends JPanel{
 			//manager.setCharacterScreen(new CharactersScreen(manager));
 			
 		//	manager.getPanel().add(manager.getCharacterScreen());
-			System.out.println("CHAR CHOSEN:" + manager.getCharacterChosen());
+			//System.out.println("CHAR CHOSEN:" + manager.getCharacterChosen());
 			
 			manager.switchPage("Details");
 		}	
@@ -104,7 +104,7 @@ public class CharactersScreen extends JPanel{
 	class newCharButtonListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Switch to new char action listen");
+			//System.out.println("Switch to new char action listen");
 			manager.switchPage("AddCharacter");
 		}	
 	}

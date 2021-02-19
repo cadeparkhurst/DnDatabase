@@ -63,7 +63,7 @@ public class PageManager{
 
 		
 		this.switchPage("login");
-		System.out.println(this.loginPage.isEnabled());
+		//System.out.println(this.loginPage.isEnabled());
 		this.getFrame().repaint();
 	}
 	

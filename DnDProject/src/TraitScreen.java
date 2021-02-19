@@ -52,7 +52,7 @@ public class TraitScreen extends JPanel{
 	
 	public void updateForCharacter() {
 		this.characterID = manager.getCharacterChosen();
-		System.out.println(this.characterID);
+		//System.out.println(this.characterID);
 		this.traits = this.getTraits();
 //		this.layout = new GridLayout(2,3);
 //		this.setLayout(layout);

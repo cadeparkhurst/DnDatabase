@@ -65,7 +65,7 @@ public class LanguageScreen extends JPanel {
 
 	public void updateForCharacter() {
 		this.characterID = manager.getCharacterChosen();
-		System.out.println(this.characterID);
+		//System.out.println(this.characterID);
 		this.langs = this.getLangNames();
 //		int rows = this.items.size() > 10? 10:this.items.size();
 //		this.layout = new GridLayout(2,3);

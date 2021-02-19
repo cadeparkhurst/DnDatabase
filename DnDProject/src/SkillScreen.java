@@ -124,7 +124,7 @@ public class SkillScreen extends JPanel{
 	
 	public void updateForCurrentCharacter() {
 		this.characterID = manager.getCharacterChosen();
-		System.out.println("Current details: "+ characterID);
+		//System.out.println("Current details: "+ characterID);
 		this.currentCharDetails = this.getDetails();
 		acro.setText("Acrobatics "+this.currentCharDetails.get("Acrobatics"));
 		anim.setText("Animal Handling "+this.currentCharDetails.get("Animal Handling"));

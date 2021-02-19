@@ -149,7 +149,7 @@ public class ItemScreen extends JPanel {
 
 	public void updateForCharacter() {
 		this.characterID = manager.getCharacterChosen();
-		System.out.println(this.characterID);
+		//System.out.println(this.characterID);
 		this.items = this.getItemNames();
 		this.itemQuant.setText("Quantity");
 		this.itemName.setText("Item Name");
